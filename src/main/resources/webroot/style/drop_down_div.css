@@ -1,0 +1,59 @@
+html, body{
+    padding:0px;
+    margin:0px;
+}
+body * {
+    margin:0;
+    padding:0;
+}
+:root {
+    --size: 400px;
+}
+
+.dropdown {
+    transform-origin:center top;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.dropdown-open {
+    animation: open .1s ease-in-out forwards;
+}
+
+@keyframes open {
+    0% {
+        transform: scaleY(0);
+        opacity: 0;
+        max-height: 0px;
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+        max-height: 100%;
+    }
+}
+
+.dropdown-close {
+    animation: close .1s ease-in-out forwards;
+}
+
+@keyframes close {
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
+        max-height: 400px;
+    }
+    100% {
+        transform: scaleY(0);
+        opacity: 0;
+        max-height: 0px;
+    }
+}
+

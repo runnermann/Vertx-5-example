@@ -1,0 +1,230 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Interstate;
+  font-style: normal;
+  font-weight: bold;
+  src: local("Interstate"), url("../font/interstate-31.ttf");
+}
+:root {
+	--max-width: 2200px;
+}
+body, html {
+  font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+  height: 100%;
+  margin: 0;
+  color: #777;
+  background: #070707;
+}
+h5 {
+  font-family: Interstate;
+  font-weight: 600;
+  font-size: 36px;
+  color: #000000;
+}
+h6 {
+  color: #FFFFFF;
+  font-family: "Myriad Pro";
+  text-align: left;
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+h7 {
+  color: #FFFFFF;
+  font-family: Arial;
+  text-align: left;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.jumbotron {
+  background: #000000 url("../images/landing_splash/person_grad_1920x1080.jpg") center;
+  background-size: cover;
+  height: 100vh; /* 100% of the viewport height */
+  padding: 0;
+  margin: 0;
+}
+/*.modal-dialog {*/
+/*  width: inherit;*/
+/*}*/
+.splash-img {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.splash-img {
+  background-image: url("../images/landing_splash/person_grad_1920x1080.jpg");
+  height: 100%;
+}
+.caption {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #B01700; /* #821200; */
+  margin-top: 1.6em;
+  margin-left: 2.4em;
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+.btn-email {
+  align-items: center;
+  height: 50px;
+  /*line-height: 50px;*/
+  width: 150px;
+  font-family: Interstate;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFF;
+  background-color: #FF5B00;
+  border-width: 0;
+  border-radius: 2px;
+  outline: none;
+  border-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
+}
+.btn-email:hover {
+  background-color: #FF4924;
+  border-color: transparent;
+}
+.top-margin-36 {
+  margin-top: 30vh;
+}
+.blue-round-rect {
+  margin-left: 0;
+  background-color: #203655;
+  border-radius: 2px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  min-width: 440px;
+  padding: 24px;
+}
+.header-logo {
+  padding-left: 40px;
+  height: 56px;
+}
+.close {
+  color: #000000;
+  padding-right: 2vh;
+  padding-top: 1.5vh;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #050505;
+  text-decoration: none;
+  cursor: pointer;
+}
+.email-ts {
+  height: 50px;
+  border-radius: 2px;
+  background-color: #ced4da;
+  width: 100%;
+}
+.modal-video {
+  width: 100%
+}
+@media screen and (max-width: 880px) {
+  .jumbotron {
+    background: url("../images/landing_splash/person_grad_860x1080.jpg") center;
+    background-size: cover;
+    height: 100vh; /* 100% of the viewport height */
+    padding: 0;
+    margin: 0;
+  }
+  .modal-dialog {
+    width: 96vw;
+  }
+  .blue-round-rect {
+    margin-left: -20%;
+  }
+  .btn-email {
+    font-size: 12px;
+    height: 24px;
+    width: 120px;
+  }
+  .email-ts {
+    height: 36px;
+  }
+  h5 {
+    font-family: Interstate;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+  }
+  h6 {
+    color: #FFFFFF;
+    font-family: "Myriad Pro";
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  h7 {
+    color: #FFFFFF;
+    font-family: Arial;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  h6 {
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .blue-round-rect {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    min-width: 0px;
+    /*display: flex;*/
+  }
+  .jumbotron {
+    background: url("../images/landing_splash/person_grad_430x866.jpg") center;
+    background-size: cover;
+    height: 100vh; /* 100% of the viewport height */
+    padding: 0;
+    margin: 0;
+  }
+  .top-margin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18vh;
+    margin-top: 22em;
+  }
+}
+@media screen and (max-width: 390px) {
+  .top-margin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18vh;
+    margin-top: 18em;
+  }
+  .btn-index {
+    font-size: 1.3em;
+  }
+}
+
+
+
+

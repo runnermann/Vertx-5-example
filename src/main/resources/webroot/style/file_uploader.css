@@ -1,0 +1,21 @@
+.drag-drop-area {
+    border: 2px dashed #cccccc;
+    text-align: center;
+    height: 20vh;
+    max-height: 200px !important;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.drag-drop-area:hover {
+    border-color: #aaa;
+}
+
+.drag-drop-area p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+}

@@ -1,0 +1,20 @@
+.module {
+    background: white;
+    border: 1px solid #ccc;
+    margin: 3%;
+}
+.module > h2 {
+    padding: 1rem;
+    margin: 0 0 0.5rem 0;
+}
+.module > p {
+    padding: 0 1rem;
+}
+span.stripe-lg {
+    color: white;
+    background: linear-gradient(-55deg, #222, #222 10px, #333 10px, #333 20px);
+}
+span.svg-overlay {
+    left: -100%;
+    right: -6.6875rem;
+}

@@ -1,0 +1,328 @@
+/* https://codepen.io/h-lautre/pen/poQNmmV */
+/* Importer la police Roboto depuis Google Fonts */
+/* Styles pour l'en-tête */
+.im {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+.logo img {
+    max-height: 55px;
+}
+.custom-loader {
+    width: 30px;
+    height: 12.5px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    display: grid;
+    animation: h2 4s infinite linear;
+}
+.custom-loader:before,
+.custom-loader:after {
+    content:"";
+    grid-area: 1/1;
+    border:inherit;
+    border-radius: 50%;
+    animation: inherit;
+    animation-duration: 6s;
+}
+.custom-loader:after {
+    --s:-1;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+/* Style pour la fenêtre contextuelle (popup) de SweetAlert */
+.swal-overlay {
+    background-color: rgba(0, 0, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+.custom-swal-popup {
+    width: 300px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.custom-swal-close-button {
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.custom-swal-content {
+    text-align: center;
+}
+.custom-swal-popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+.custom-swal-popup ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.custom-swal-popup ul li:last-child {
+    border-bottom: none;
+}
+.scroll-D {
+    opacity: 0;
+}
+
+/*scroll effect*/
+.scroll-section {
+    transform: translateY(86px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+.scroll-section-left {
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.scroll-section-2 {
+    transform: translateX(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+.delay-1 {
+    transition-delay: 2s;
+    animation-delay: 2s;
+    -moz-animation-delay: 2s;
+}
+.delay-2 {
+    transition-delay: 4s;
+    animation-delay: 4s;
+    -moz-animation-delay: 4s;
+}
+.delay-3 {
+    transition-delay: 6s;
+    animation-delay: 6s;
+    -moz-animation-delay: 6s;
+}
+.scroll-image {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.scroll-image.visible {
+    opacity: 1;
+}
+.scroll-section-3.visible,
+.scroll-section-2.visible,
+.scroll-section-1.visible,
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-section-left {
+    transform: translateX(-20%);
+}
+svg.count {
+    max-height: 2em;
+    float: none;
+    display: table;
+    margin: 0 auto;
+    fill: #000000;
+}
+/* Définir les animations */
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce-in-top {
+    from {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*-----------------------*/
+/* Styles pour la section d'introduction */
+.intro {
+    padding: 50px;
+    text-align: center;
+}
+
+.intro h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    color: #fff;
+    font-size: 16px;
+}
+.imginter {
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+/* ---------------------- */
+/* Styles for counter */
+.counter {
+    background-color:#e7e7e7;
+    padding: 20px 0;
+    border-radius: 5px;
+    max-height: max-content;
+}
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #070709;
+}
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #404047;
+}
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #29ABE2;
+}
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+/* Styles pour les boîtes de contenu */
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.ksbox{
+    padding: 20px;
+    margin-top: 16rem;
+    margin-bottom: 16rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+/*.ksbox-fadein {*/
+/*    animation: box-fade 1s ease-in-out;*/
+/*    transition: transform 0.3s ease-in-out;*/
+/*}*/
+
+@keyframes box-fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/*.box:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*.box img {*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*    animation: image-fade 1s ease-in-out;*/
+/*}*/
+
+@keyframes image-fade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/*.box .text {*/
+/*    animation: text-fade 1s ease-in-out;*/
+/*}*/
+
+@keyframes text-fade {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.box i.material-icons {
+    font-size: 48px;
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .intro {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+    .animate-typewriter {
+        margin: 0 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .menu li {
+        margin-left: 0;
+    }
+
+    .menu li a {
+        color: #fff;
+    }
+
+    .ksbox {
+        padding: 0;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    /*.box:hover {*/
+    /*    transform: none;*/
+    /*}*/
+}
+.ban {
+    width: 100%;
+    height: auto;
+}

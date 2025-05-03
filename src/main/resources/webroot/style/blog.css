@@ -1,0 +1,116 @@
+@charset "UTF-8";
+@font-face {
+    font-family: Baskerville;
+    font-style: normal;
+    font-weight: bold;
+    src: local("Baskerville"), url("../font/Baskervville-Italic.ttf");
+}
+root {
+    --bs-body-font-family: Baskerville, sans-serif;
+}
+h1 {
+    font-size: calc(2rem + 1.5vw);
+    font-family: var(--bs-body-font-family);
+}
+h2 {
+    margin-bottom: 1rem;
+    /*font-size: calc(2rem + 1.5vw);*/
+    font-weight: 800;
+}
+h2.after {
+    margin-top: 3rem;
+}
+h3 {
+    margin-bottom: 1.6rem;
+}
+h5.card-title {
+    font-family: Baskerville, sans-serif;
+    font-size: calc(2rem);
+    font-style: italic;
+    color: #000000;
+}
+li {
+    margin-top: 1rem;
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 19px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    color: #000000D6;
+}
+p {
+    font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    color: #000000D6;
+}
+li a,
+p a {
+    font-style: italic;
+    color: #000000;
+    text-decoration: underline;
+}
+blockquote {
+    margin: .5em;
+    background: #eee;
+    padding: 1em;
+    border-radius: .5em;
+    font-style: italic;
+}
+
+header.masthead {
+    position: relative;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background: #4FA9DB url('https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/now_hiring_wait.png') no-repeat scroll center center;
+    height: 500px;
+}
+header.masthead_ihq {
+    position: relative;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background: #4FA9DB url('/app/images/blog/hiring_top_talent.png') no-repeat scroll center center;
+    height: 500px;
+}
+header.masthead_interview {
+    position: relative;
+    padding-top: calc(8rem + 57px);
+    padding-bottom: 8rem;
+    background: #4FA9DB url('/app/images/blog/interviewers-2.png') no-repeat center top;
+    height: 500px;
+}
+.interview-img {
+    background: #000000 url('/app/images/blog/interviewers.png') center;
+    background-size: cover;
+    height: 100vh; /* 100% of the viewport height */
+    padding: 0;
+    margin: 0;
+}
+.blog-img {
+    max-width: 1200px;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: 12.5rem;
+        padding-bottom: 28.5rem;
+    }
+    header.masthead .page-heading h1, header.masthead .page-heading .h1,
+    header.masthead .site-heading h1,
+    header.masthead .site-heading .h1 {
+        font-size: 5rem;
+    }
+    header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+        font-size: 3.5rem;
+    }
+    header.masthead .post-heading .subheading {
+        font-size: 1.875rem;
+    }
+}
+@media (min-width: 740px) {
+    header.masthead {
+        padding-top: 12.5rem;
+        padding-bottom: 28.5rem;
+    }
+}

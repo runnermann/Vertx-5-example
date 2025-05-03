@@ -1,0 +1,70 @@
+/* Infinite scroll animation */
+car {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.car-container {
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.car-container:before,
+.car-container:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.car-container:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.car-container:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.car-track {
+    display: inline-block;
+    animation: 35s scroll infinite linear;
+}
+
+.car-item {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 50px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 18px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 580px) {
+    .car-item {
+        font-size: 1em;
+    }
+    .car-container:before,
+    .car-container:after {
+        width: 40px;
+    }
+}
+
+

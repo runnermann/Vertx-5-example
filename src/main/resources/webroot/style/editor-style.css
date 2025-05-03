@@ -1,0 +1,33 @@
+svg.editor-icon {
+    padding: 12px;
+    max-height: 4.4em;
+    min-height: 4.4rem;
+    width: 4.4rem;
+    float: none;
+    display: table;
+    margin-bottom: .4rem;
+    margin-left: 1rem;
+    fill: #10A37F;
+    background-color: #F7F7F7;
+    border-radius: 98px;
+    transition: all 0.4s;
+}
+svg.editor-icon:hover {
+    background-color:#16DFAD;
+    fill: #0D7E62
+}
+.align-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-svg {
+    background-color: transparent;
+    border-color: transparent;
+}
+.bg-editor {
+    background: #FCFCFD;
+    transition: all 0.4s;
+}
+.bg-editor-hv:hover {
+    background: #f4f4f4
+}

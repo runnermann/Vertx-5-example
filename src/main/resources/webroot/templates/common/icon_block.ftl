@@ -1,0 +1,1 @@
+<link rel="icon" type="image/svg" href="/app/images/favicons/favicon.svg">

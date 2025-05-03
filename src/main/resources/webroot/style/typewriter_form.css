@@ -1,0 +1,76 @@
+.Typewriter__cursor {
+    display: inline-block;
+    color: black;
+    font-size: 1.2rem;
+    animation: none;
+}
+
+.Typewriter__cursor.blink {
+    animation: blink 1s steps(2, start) infinite; /* Add blinking when typing is done */
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.ani-container {
+    margin-top: 6vh;
+    text-align: center;
+}
+.ani-typeWriterText{
+    font-family: "Courier New", monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.input-font {
+    font-size: 1.2rem;
+}
+.input-fld {
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    width: 60%;
+}
+.input-fld:hover {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+.input-fld:focus {
+    border: none;
+    border-bottom: 1px solid #ced4da !important;
+}
+.heading-box {
+    max-height: 160px;
+    min-height: 160px;
+    margin-bottom: 10px;
+}
+.form-box {
+    text-align: center;
+    max-height: 70px;
+    min-height: 70px;
+    min-width:  100%;
+}
+.form-hidden {
+    display: none;
+}
+#formHidden {
+    display: none; /* Initially hidden */
+    opacity: 0;    /* Start with 0 opacity */
+    transition: opacity 0.5s ease-in-out; /* Fade-in over 500ms */
+}
+#formHidden.show {
+    display: block; /* Ensure it's visible */
+    opacity: 1;     /* Fully visible */
+}
+
+.clear-btn {
+    background-color: transparent;
+    border: 0 transparent;
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    color: #000;
+}

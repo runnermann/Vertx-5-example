@@ -1,0 +1,1 @@
+<script src="/app/javascript/non-index.js"></script>

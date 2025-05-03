@@ -1,0 +1,45 @@
+h4.body {
+    color: #000000;
+}
+/*a {*/
+/*    color: #070707;*/
+/*}*/
+.link-light {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.border-md-rt-1 {
+    border-right: 1px solid var(--colors--green--green-400);
+    height: 100%;
+    min-height: 100%;
+}
+.border-rt-1 {
+    border-right: 1px solid var(--colors--green--green-400);
+    height: 100%;
+    min-height: 100%;
+}
+.border-lt-1 {
+    border-left: 1px solid var(--colors--green--green-400);
+    height: 100%;
+    min-height: 100%;
+}
+.border-btm-1 {
+    border-bottom: 1px solid var(--colors--green--green-400);
+}
+.link-light {
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 580px) {
+    .link-light {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+    .border-lt-1 {
+        border-left: 0px solid transparent;
+    }
+    .border-md-rt-1 {
+        border-right: 0px solid transparent;
+    }
+}

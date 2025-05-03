@@ -1,0 +1,24 @@
+svg.footer-icon {
+    max-height: 2.4em;
+    min-height: 2.4rem;
+    float: none;
+    display: table;
+    margin-bottom: .4rem;
+    margin-left: 1rem;
+    fill: #070708;
+}
+.color-footer {
+    background-color: #f4f4f4;
+}
+.nav-link-footer {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #080808;
+}
+.nav-link-footer:hover {
+    color: #000000;
+}
+.members {
+    color: #F4F4F4 !important;
+    cursor: default;
+}

@@ -1,0 +1,30 @@
+.scrolled-down{
+    transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+    transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background: #E4E4E4;
+    border-bottom-color: #BFBFBF50;
+    border-bottom-width: .025em;
+    border-bottom-style: solid;
+}
+.small {
+    font-size: .68em;
+}
+.nav-link {
+    border-radius: 24px !important;
+}
+.nav-link:hover {
+    color: #070708;
+    background-color: RGBA(0,0,0,0.2);
+    border-color: transparent!important;
+}
+a:hover {
+    color: #070707;
+}
