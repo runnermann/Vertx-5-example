@@ -101,12 +101,6 @@
             <version>${vertx.version}</version>
         </dependency>
 
-        <!-- FOR DB SERVICE PROXY -->
-<!--        <dependency>-->
-<!--            <groupId>io.vertx</groupId>-->
-<!--            <artifactId>vertx-service-proxy</artifactId>-->
-<!--            <version>${vertx.version}</version>-->
-<!--        </dependency>-->
         <!-- interaction with DB -->
         <dependency>
             <groupId>io.vertx</groupId>

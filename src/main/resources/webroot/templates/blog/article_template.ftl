@@ -3,7 +3,7 @@
 <head>
     <#list blogData as meta>
             <meta charset="UTF-8">
-            <link rel="canonical" href="https://MyVIDI.com/articles/${meta.id}/${meta.page_endpoint}">
+            <link rel="canonical" href="https://MyVIDI.com/articles/${meta.blog_id}/${meta.page_endpoint}">
             <#include "../common/icon_block.ftl">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${meta.title}</title>
@@ -89,7 +89,7 @@
                 <div class="col-lg-1 col-sm-0">&nbsp;&nbsp;</div>
                 <div class="col-lg-5" col-sm-6>
             <#list rowData as section>
-                <#if section.new = true>
+                <#if section.new_row = true>
                         </div> <#-- close out old section -->
                     </div>
                     <br>
@@ -138,7 +138,7 @@
                                 </ul>
                             </#if>
                             <#-- end of left section -->
-                            <#if section.left_end = true>
+                            <#if section.section_left_end = true>
                                 </div> <!-- end left section -->
                                 <div class="col-lg-5" col-sm-6> <!-- start right section -->
                             </#if>

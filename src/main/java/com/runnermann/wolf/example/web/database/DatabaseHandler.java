@@ -55,13 +55,6 @@ public class DatabaseHandler {
 //        String u = errors[1];
 //        String p = errors[0];
 
-        // UNCOMMENT to use a remote DB
-        //        JDBCClient dbClient = JDBCClient.createShared(vertx, new JsonObject()
-//                .put("url", config().getString(CONFIG_USERS_JDBC_URL, "jdbc:postgresql://usa-conus.caws1d0xah4s.us-west-2.rds.amazonaws.com:5432/usa-conus"))
-//                .put("driver_class", config().getString(CONFIG_USERS_JDBC_DRIVER_CLASS, "org.postgresql.Driver"))
-//                .put("max_pool_size", config().getInteger(CONFIG_USERS_JDBC_MAX_POOL_SIZE, 30))
-//                .put("user", u)
-//                .put("password", p));
 
         // Connect to local DB. No PW
         PgConnectOptions connectOptions = new PgConnectOptions()

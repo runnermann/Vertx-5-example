@@ -56,12 +56,13 @@ public class PageHandler {
         List<String> params = new ArrayList<>();
         dbHandler.doFetch(SqlQuery.FETCH_ALL_BLOGS, params)
         .onComplete(res -> {
+
             JsonArray returnArry = new JsonArray();
             if(res.succeeded()) {
                 RowSet<Row> rows = res.result();
-
+                // Slower but we won't get the page endpoint if we use stream.parallel
                 rows.forEach(row -> {
-                                    long id = row.getLong("blog_id");
+                    long id = row.getLong("blog_id");
                     JsonObject jobObj = new JsonObject()
                             .put("blog_id", id)
                             .put("image_card_link", row.getString("image_card_link"))
@@ -75,9 +76,8 @@ public class PageHandler {
                                     + row.getString("page_endpoint"));
                     returnArry.add(jobObj);
                 });
+                context.put("blogData", returnArry);
             }
-
-            context.put("blogData", returnArry);
 
             Page page = new Page();
             page.commonHandlerWPolicy(context, "webroot/templates/blog_listing.ftl", templateEngine);
@@ -97,57 +97,34 @@ public class PageHandler {
             params.add(id);
 
             JsonArray blogDataAry = new JsonArray();
-            //JsonObject blogDataRow = new JsonObject();
 
             dbHandler.doFetch(SqlQuery.FETCH_BLOG_BY_ID, params)
-                .onComplete(res -> {
+                    .onComplete(res -> {
                     RowSet<Row> rows = res.result();
-                    rows.forEach(row -> {
-                        //String[] data = splitRowData(row.toJson());
-                        blogDataAry.add(row);
+                    rows.stream().parallel().map(row -> {
+                       return blogDataAry.add(row.toJson());
+                    });
+                    context.put("blogData", blogDataAry);
+                })
+                .onComplete(res -> {
+                    JsonArray rowData = new JsonArray();
+                    dbHandler.doFetch(SqlQuery.FETCH_BLOG_ROWS, params)
+                            .onComplete(resi -> {
+                                if (resi.succeeded()) {
+                                    RowSet<Row> rows = resi.result();
+                                    rows.stream().parallel().map(row -> {
+                                        return rowData.add(row.toJson());
+                                    });
+                                    context.put("rowData", rowData);
+                                }
+                            }).onComplete(resi -> {
+                                Page page = new Page();
+                                if(blogDataAry.getJsonObject(0).getBoolean("article")) {
+                                    page.commonHandlerWPolicy(context, "webroot/templates/blog/article_template.ftl", templateEngine);
+                                } else {
+                                    page.commonHandlerWPolicy(context, "webroot/templates/blog/blog_template.ftl", templateEngine);
+                                }
+                            });
                 });
-                context.put("blogData", blogDataAry);
-
-                JsonArray rowDataAry = new JsonArray();
-                dbHandler.doFetch(SqlQuery.FETCH_BLOG_ROWS, params)
-                    .onComplete(resi -> {
-                        if (resi.succeeded()) {
-                            RowSet<Row> rowsi = resi.result();
-                            rowsi.forEach(row -> {
-                                JsonObject rowDataRow = new JsonObject()
-                                    .put("intro", row.getBoolean("intro"))
-                                    .put("new", row.getBoolean("new_row"))
-                                    .put("left", row.getBoolean("section_left"))
-                                    .put("left_end", row.getBoolean("section_left_end"))
-                                    .put("subtitle", row.getBoolean("subtitle"))
-                                    .put("num_list_start", row.getBoolean("num_list_start"))
-                                    .put("num_start_no", row.getInteger("num_start_no"))
-                                    .put("num_list_end", row.getBoolean("num_list_end"))
-                                    .put("num_list_item", row.getBoolean("num_list_item"))
-                                    .put("para_num", row.getInteger("para_num"))
-                                    .put("h2_h3", row.getString("h2_h3"))
-                                    .put("h2_subtitle", row.getString("h2_subtitle"))
-                                    .put("para", row.getString("para"))
-                                    .put("img", row.getBoolean("img"))
-                                    .put("img_name", row.getString("img_name"))
-                                    .put("img_alt", row.getString("img_alt"))
-                                    .put("img_sz", row.getString("img_sz"))
-                                    .put("unorder_list_start", row.getBoolean("unorder_list_start"))
-                                    .put("unorder_list_end", row.getBoolean("unorder_list_end"))
-                                    .put("unorder_list_item", row.getBoolean("unorder_list_item"));
-
-                            rowDataAry.add(rowDataRow);
-                        });
-                    }
-
-                    context.put("rowData", rowDataAry);
-                    Page page = new Page();
-                    if(blogDataAry.getJsonObject(0).getBoolean("article")) {
-                        page.commonHandlerWPolicy(context, "webroot/templates/blog/article_template.ftl", templateEngine);
-                    } else {
-                        page.commonHandlerWPolicy(context, "webroot/templates/blog/blog_template.ftl", templateEngine);
-                    }
-                });
-            });
-    }
+            }
 }
