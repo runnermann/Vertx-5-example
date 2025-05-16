@@ -374,23 +374,7 @@ h3.centered {
     visibility: hidden !important;
 }
 
-/*.header_content {
-    width: 100%;
-    position: relative;
-    height: 60px;
-}*/
-.jumbotron {
-    background: #000000 url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/earth_1920X1080.jpg") center;
-    background-size: cover;
-    height: 1080px;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-}
 .footer_content {
-    /*background-color: #202ecc;*/
-    /*background-color: #033E8C; good blue*/
-    /*background-color: #517EA6; *//*darker blue grey. Official looking. good*/
     background-color: #F8F8F8;
     width: 100vw;
     position: relative;
@@ -1122,33 +1106,8 @@ footer {
         font-size: 3vw;
         /*padding-left: 20px; */
     }
-    .jumbotron {
-        background:  #000000 url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/nasa_bckgnd_390X844.jpg");
-        background-size: cover;
-        height: 844px;
-        /*position: absolute;*/
-    }
     .index-pitch {
         padding: 6vh 0 3vh 0;
-    }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {
-    @media (orientation: portrait) {
-        .jumbotron {
-            background: #000000 url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/nasa_bckgnd_390X844.jpg");
-            background-size: cover;
-            height: 844px;
-            /*position: absolute;*/
-        }
-    }
-
-    @media (orientation: landscape) {
-        .jumbotron {
-            background: #000000 url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/HERO_BKGND/n896x414.jpg");
-            background-size: cover;
-            height: 414px;
-            /*position: absolute;*/
-        }
     }
 }
 

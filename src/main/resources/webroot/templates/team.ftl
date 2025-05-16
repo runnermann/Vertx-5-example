@@ -2,20 +2,15 @@
 <html lang="en-us" ng-app="userApp">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://knocscore.com/team">
+    <link rel="canonical" href="https://MyVIDI.com/team">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="Team page">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://knocscore.com">
-    <meta property="og:title" content="KnocScore">
-
+    <meta property="og:url" content="https://MyVIDI.com">
+    <meta property="og:title" content="MyVIDI">
     <#include "common/styles_block.ftl">
-
-    <!-- non-index pages -->
-<#--    <script src="app/javascript/people.js"></script>-->
-
 </head>
 <body>
     <#-- header and modals -->
@@ -41,7 +36,7 @@
                         <div class="card card-custom bg-dark border-dark">
                             <div class="card-body" style="overflow-y: auto">
                                 <div class="center-text mb-5">
-                                    <img src="https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/${people.photo_link}" class="rounded-1" alt="KnocScore team member" width="214" height="214">
+                                    <img src="/images/${people.photo_link}" class="rounded-1" alt="MyVIDI team member" width="214" height="214">
                                 </div>
                                 <h4 class="card-title">${people.name}</h4>
                                 <hr class="mt-1">

@@ -57,35 +57,6 @@ blockquote {
     border-radius: .5em;
     font-style: italic;
 }
-
-header.masthead {
-    position: relative;
-    padding-top: calc(8rem + 57px);
-    padding-bottom: 8rem;
-    background: #4FA9DB url('https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/now_hiring_wait.png') no-repeat scroll center center;
-    height: 500px;
-}
-header.masthead_ihq {
-    position: relative;
-    padding-top: calc(8rem + 57px);
-    padding-bottom: 8rem;
-    background: #4FA9DB url('/app/images/blog/hiring_top_talent.png') no-repeat scroll center center;
-    height: 500px;
-}
-header.masthead_interview {
-    position: relative;
-    padding-top: calc(8rem + 57px);
-    padding-bottom: 8rem;
-    background: #4FA9DB url('/app/images/blog/interviewers-2.png') no-repeat center top;
-    height: 500px;
-}
-.interview-img {
-    background: #000000 url('/app/images/blog/interviewers.png') center;
-    background-size: cover;
-    height: 100vh; /* 100% of the viewport height */
-    padding: 0;
-    margin: 0;
-}
 .blog-img {
     max-width: 1200px;
     width: 100%;

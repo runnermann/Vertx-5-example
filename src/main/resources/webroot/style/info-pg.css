@@ -113,13 +113,6 @@ input.ng-pristine {
 .header-logo {
     height: 56px;
 }
-.jumbotron {
-    background:  url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/people_hero_2396x1448.jpg") no-repeat center;
-    height: 1438px;
-    padding: 0;
-    margin: auto auto;
-    overflow: hidden;
-}
 .color-lft {
     background-color: #000000;
 }
@@ -255,12 +248,6 @@ sm-right {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 @media only screen and (max-width: 1400px) {
-    .jumbotron {
-        background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/hero_1400x1270.jpg") no-repeat center;
-        height: 1270px;
-        padding: 0;
-        margin: -40px auto;
-    }
     .section-box-hdr {
         max-width: 980px;
     }
@@ -279,13 +266,6 @@ sm-right {
     }
 }
 @media screen and (max-width: 480px) {
-    .jumbotron {
-        background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/new_hero_mobile.jpg") no-repeat center;
-        height: 1106px;
-        padding: 0;
-        /*margin: -40px auto;*/
-    }
-
     .sticker-box {
         margin-left: 22px;
     }
@@ -294,13 +274,6 @@ sm-right {
     .section-box {
         height: 844px;
     }
-
-    /* section two */
-    .section-two {
-        margin-top: 198px;
-        background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/study_thumbs_mobile.png") no-repeat center;
-    }
-
 
     .horizmedia-section-box {
         height: 928px;

@@ -9,7 +9,6 @@
 import Form_Typewriter from "../form_Typewriter.js";
 
 class FormController_Industry {
-
     #hasButtonEnding = false;
     #writerForm1 = null;
     #buttonOne = null;
@@ -33,7 +32,6 @@ class FormController_Industry {
         this.#responses = [""];
         this.#writerForm1 = document.getElementById("form-question");
         this.#buttonOne = document.getElementById("edit_industry");
-        //this.#buttonTwo = document.getElementById("submit-form");
         // Bind event listeners to the buttons
         this.#buttonOne.onclick = () => this.startForm();
         //this.#buttonTwo.onclick = () => this.startForm();

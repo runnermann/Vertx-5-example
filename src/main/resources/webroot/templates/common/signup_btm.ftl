@@ -1,10 +1,10 @@
 <div class="row ">
     <div class="col-md-6 col-sm-12">
-        <h2 class="bud-heading-style bud-subheader">Sign up for KnocScore today</h2>
+        <h2 class="bud-heading-style bud-subheader">Sign up for MyVIDI today</h2>
     </div>
     <div class="col-md-6 col-sm-12">
         <p class="bud-body">
-            Limited early access is now open! Be one of the first to raise your KnocScore and gain a
+            Limited early access is now open! Be one of the first to raise your MyVIDI and gain a
             competitive edge. Early sign-ups are free and available for a short time only. With limited
             spots, this is your chance to start building your score before thousands of others.
         </p>

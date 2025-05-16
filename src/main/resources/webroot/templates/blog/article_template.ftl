@@ -3,31 +3,30 @@
 <head>
     <#list blogData as meta>
             <meta charset="UTF-8">
-            <link rel="canonical" href="https://knocscore.com/articles/${meta.id}/${meta.page_endpoint}">
+            <link rel="canonical" href="https://MyVIDI.com/articles/${meta.id}/${meta.page_endpoint}">
             <#include "../common/icon_block.ftl">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${meta.title}</title>
             <meta name="description" content="${meta.meta_descript}">
             <#-- Open Graph / Facebook -->
             <meta property="og:type" content="website">
-            <meta property="og:url" content="https://knocscore.com/articles/${meta.page_endpoint}">
+            <meta property="og:url" content="https://MyVIDI.com/articles/${meta.page_endpoint}">
             <meta property="og:title" content="${meta.title}">
             <meta property="og:description" content="${meta.meta_descript}">
             <meta property="og:image" content="${meta.image_twitter_link}">
             <#-- Twitter -->
             <meta property="twitter:card" content="summary_large_image">
-            <meta property="twitter:url" content="https://knocscore.com/articles/${meta.page_endpoint}">
+            <meta property="twitter:url" content="https://MyVIDI.com/articles/${meta.page_endpoint}">
             <meta property="twitter:title" content="${meta.title}">
             <meta property="twitter:description" content="${meta.meta_descript}">
             <meta property="twitter:image" content="${meta.image_twitter_link}">
-            <#include "../common/google_analytics.ftl">
+<#--            <#include "../common/google_analytics.ftl">-->
             <#include "../common/styles_block_infopg.ftl">
             <link href="/app/style/blog.css" rel="stylesheet" type="text/css">
     </#list>
 </head>
 <body>
 <#include "../common/header_block.ftl">
-<!-- Team Page -->
 <br>
 <br>
 <br>
@@ -49,7 +48,7 @@
                         </picture>
                         <br>
                         <br>
-                        <span class="meta"><b>KnocScore Articles</b></span>
+                        <span class="meta"><b>MyVIDI Articles</b></span>
                         <br>
                         <span><b>Read Time:</b> ${rdata.read_time} minutes</span>
                         <br>
@@ -110,9 +109,8 @@
 
                             <#if section.img?? && section.img = true>
                                 <div class="col-md-${section.img_sz} col-sm-12 d-flex align-items-center mb-4">
-                                    <#--                    <img class="section-img" src="/app/images/index/military_v2.png"  alt="Improve how companies hire professionals">-->
                                     <img class="section-img"
-                                         src="https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/${section.img_name}"
+                                         src="/images/${section.img_name}"
                                          loading="lazy"
                                          alt="${section.img_alt}">
                                 </div>
@@ -153,28 +151,9 @@
             <hr class="mt-1 mb-1"/>
             <br>
             <br>
-        </div> <#-- end container -->
+        </div> <#-- end container. Not an error-->
     </section>
     <#-- SOURCES -->
-    <section>
-            <#if sourceData[0]?? && sourceData[0].found >
-                <div class="container">
-                    <div class="col-lg-2 col-sm-0">&nbsp;&nbsp;</div>
-                    <div class="col-lg-8" col-sm-12>
-                        <br>
-                        <br>
-                        <h2>References:</h2>
-                            <ol>
-                                <#list sourceData as source>
-                                    <li>${source.reference}</li>
-                                </#list>
-                            </ol>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-            </#if>
-    </section>
     <section>
         <div class="container" >
             <div class="row fm-container__paper">

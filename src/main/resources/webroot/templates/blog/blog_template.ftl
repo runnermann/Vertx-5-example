@@ -3,31 +3,30 @@
 <head>
     <#list blogData as meta>
             <meta charset="UTF-8">
-            <link rel="canonical" href="https://knocscore.com/articles/${meta.id}/${meta.page_endpoint}">
+            <link rel="canonical" href="https://MyVIDI.com/articles/${meta.id}/${meta.page_endpoint}">
             <#include "../common/icon_block.ftl">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${meta.title}</title>
             <meta name="description" content="${meta.meta_descript}">
             <#-- Open Graph / Facebook -->
             <meta property="og:type" content="website">
-            <meta property="og:url" content="https://knocscore.com/articles/${meta.page_endpoint}">
+            <meta property="og:url" content="https://MyVIDI.com/articles/${meta.page_endpoint}">
             <meta property="og:title" content="${meta.title}">
             <meta property="og:description" content="${meta.meta_descript}">
             <meta property="og:image" content="${meta.image_twitter_link}">
             <#-- Twitter -->
             <meta property="twitter:card" content="summary_large_image">
-            <meta property="twitter:url" content="https://knocscore.com/articles/${meta.page_endpoint}">
+            <meta property="twitter:url" content="https://MyVIDI.com/articles/${meta.page_endpoint}">
             <meta property="twitter:title" content="${meta.title}">
             <meta property="twitter:description" content="${meta.meta_descript}">
             <meta property="twitter:image" content="${meta.image_twitter_link}">
-            <#include "../common/google_analytics.ftl">
+<#--            <#include "../common/google_analytics.ftl">-->
             <#include "../common/styles_block_infopg.ftl">
             <link href="/app/style/blog.css" rel="stylesheet" type="text/css">
     </#list>
 </head>
 <body>
 <#include "../common/header_block.ftl">
-<!-- Team Page -->
 <br>
 <br>
 <br>
@@ -51,7 +50,7 @@
                         </#if>
                         <br>
                         <br>
-                        <span class="meta"><b>KnocScore Articles</b></span>
+                        <span class="meta"><b>MyVIDI Articles</b></span>
                         <br>
                         <span><b>Read Time:</b> ${rdata.read_time} minutes</span>
                         <br>
@@ -138,7 +137,6 @@
                                 <ol class="list-unstyled">
                                     <li><b>Edited:</b> ${chng.change_date} - ${chng.change_descript}</li>
                                 </ol>
-
                         </#if>
                     </#list>
                 </div>

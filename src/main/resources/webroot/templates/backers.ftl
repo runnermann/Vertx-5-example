@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>Our Backers: KnocScore</title>
+    <title>Our Backers: MyVIDI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://knocscore.com/our-backers">
+    <link rel="canonical" href="https://MyVIDI.com/our-backers">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="About">
     <#-- Open Graph / Facebook -->
     <#include "common/google_analytics.ftl">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://knocscore.com/our-backers">
+    <meta property="og:url" content="https://MyVIDI.com/our-backers">
     <meta property="og:title" content="Our Backers">
     <#include "common/google_analytics.ftl">
     <!-- styles -->
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-md-6 top-margin-top mb-4">
                     <#--                <h3 class="eyebrow mb-4">Introduction</h3>-->
-                    <p class="act-like-h1">Our KnocScore Superheroes</p>
+                    <p class="act-like-h1">Our MyVIDI Superheroes</p>
                 </div>
             </div>
             <div class="row">

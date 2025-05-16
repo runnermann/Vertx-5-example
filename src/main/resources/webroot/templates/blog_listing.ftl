@@ -2,25 +2,25 @@
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://knocscore.com/blogs">
+    <link rel="canonical" href="https://MyVIDI.com/blogs">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Articles about Knowledge Credibility | KnocScore&trade;</title>
-    <meta name="description" content="Popular articles on the benefits, whats, and hows of Knowledge Credibility.">
+    <title>MyVIDI&trade;</title>
+    <meta name="description" content="A short description">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://knocscore.com/blogs">
-    <meta property="og:title" content="Knowledge Credibility | KnoC&trade;">
-    <meta property="og:description" content="Popular, need to know information on the benefits, whats, and hows of Knowledge Credibility.">
-    <meta property="og:image" content="https://knocscore.com/app/images/blog/hiring_top_talent.png">
+    <meta property="og:url" content="https://MyVIDI.com/blogs">
+    <meta property="og:title" content="Title">
+    <meta property="og:description" content="A short description">
+    <meta property="og:image" content="https://MyVIDI.com/app/images/blog/hiring_top_talent.png">
     <#-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://knocscore.com/blogs">
-    <meta property="twitter:title" content="Knowledge Credibility | KnoC&trade;">
-    <meta property="twitter:description" content="Popular articles on the benefits, whats, and hows of Knowledge Credibility.">
-    <meta property="twitter:image" content="https://knocscore.com/app/images/blog/hiring_top_talent.png">
+    <meta property="twitter:url" content="https://MyVIDI.com/blogs">
+    <meta property="twitter:title" content="Title">
+    <meta property="twitter:description" content="A short description">
+    <meta property="twitter:image" content="https://MyVIDI.com/app/images/blog/hiring_top_talent.png">
 
-    <#include "common/google_analytics.ftl">
+<#--    <#include "common/google_analytics.ftl">-->
     <#include "common/styles_block_infopg.ftl">
     <link href="/app/style/blog.css" rel="stylesheet" type="text/css">
     <!-- non-index pages -->
@@ -42,10 +42,6 @@
                 <hr>
             </div>
         </div>
-
-
-        <#-- OLD BELOW -->
-
         <div>
             <#list blogData as blog>
                 <br>

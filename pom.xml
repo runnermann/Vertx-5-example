@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.knocscore</groupId>
-    <artifactId>knocscore-web-five</artifactId>
+    <groupId>com.runnermann.wolf</groupId>
+    <artifactId>vertx-web-five</artifactId>
     <version>2.0-SNAPSHOT</version>
 
     <properties>
@@ -19,10 +19,13 @@
         <!-- AWS -->
         <aws.java.sdk.version>2.31.11</aws.java.sdk.version>
 
-        <vertx.version>5.0.0.CR7</vertx.version>
+        <vertx.version>5.0.0</vertx.version>
         <junit-jupiter.version>5.9.1</junit-jupiter.version>
+        <assertj-core.version>3.8.0</assertj-core.version>
 
-        <main.verticle>com.knocscore.web.http.HttpServerVerticle</main.verticle>
+        <testcontainers>1.20.2</testcontainers>
+
+        <main.verticle>com.runnermann.wolf.example.web.http.HttpServerVerticle</main.verticle>
         <launcher.class>io.vertx.launcher.application.VertxApplication</launcher.class>
     </properties>
 
@@ -47,24 +50,16 @@
 
     <dependencies>
         <!-- REMOVE ME -->
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-web-templ-handlebars</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>s3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.twilio.sdk</groupId>
-            <artifactId>twilio</artifactId>
-            <version>9.12.0</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.vertx</groupId>-->
+<!--            <artifactId>vertx-web-templ-handlebars</artifactId>-->
+<!--        </dependency>-->
+
         <!-- VERTX INITIAL -->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-launcher-application</artifactId>
+            <version>${vertx.version}</version>
         </dependency>
         <dependency>
             <groupId>io.vertx</groupId>
@@ -76,11 +71,6 @@
               <artifactId>vertx-web</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.vertx</groupId>-->
-<!--            <artifactId>vertx-pg-client</artifactId>-->
-<!--            <version>${vertx.version}</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-auth-oauth2</artifactId>
@@ -105,27 +95,17 @@
             <artifactId>vertx-pg-client</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-        <!-- Codegen used by Service Proxy -->
         <dependency>
             <groupId>io.vertx</groupId>
-            <artifactId>vertx-codegen</artifactId>
-            <!-- downgraded, CR7 is not found -->
-            <version>5.0.0.CR6</version>
-            <classifier>processor</classifier>
-            <!--            <scope>provided</scope>-->
-        </dependency>
-        <!-- FOR DB SERVICE PROXY -->
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-service-proxy</artifactId>
+            <artifactId>vertx-jdbc-client</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-        <!-- Contains SQLClientHelper -->
 
+        <!-- FOR DB SERVICE PROXY -->
 <!--        <dependency>-->
-<!--            <groupId>io.smallrye.reactive</groupId>-->
-<!--            <artifactId>smallrye-mutiny-vertx-sql-client</artifactId>-->
-<!--            <version>3.18.1</version>-->
+<!--            <groupId>io.vertx</groupId>-->
+<!--            <artifactId>vertx-service-proxy</artifactId>-->
+<!--            <version>${vertx.version}</version>-->
 <!--        </dependency>-->
         <!-- interaction with DB -->
         <dependency>
@@ -133,24 +113,14 @@
             <artifactId>vertx-rx-java3</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-rx-java3-gen</artifactId>
-            <version>${vertx.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-jdbc-client</artifactId>
-            <version>${vertx.version}</version>
-        </dependency>
-
-
-
-
-
 
         <!-- OTHER IMPORTS -->
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>9.12.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
             <artifactId>s3</artifactId>
@@ -170,7 +140,12 @@
             <version>${vertx.version}</version>
             <!--<version>3.8.2</version> -->
         </dependency>
-
+        <!-- LOGGING -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.13</version>
+        </dependency>
         <!-- TESTING -->
         <dependency>
             <groupId>io.vertx</groupId>
@@ -179,18 +154,19 @@
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <artifactId>junit-jupiter</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter.version}</version>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- END TESTING -->
     </dependencies>
+        <!-- END TESTING -->
 
     <build>
         <pluginManagement>
@@ -200,15 +176,6 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <release>21</release>
-
-                    <!-- Codegen -->
-                    <annotationProcessors>
-                        <annotationProcessor>io.vertx.codegen.CodeGenProcessor</annotationProcessor>
-                    </annotationProcessors>
-                    <generatedSourcesDirectory>${project.basedir}/src/main/generated</generatedSourcesDirectory>
-                    <compilerArgs>
-                        <arg>-AoutputDirectory=${project.basedir}/src/main</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -288,6 +255,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

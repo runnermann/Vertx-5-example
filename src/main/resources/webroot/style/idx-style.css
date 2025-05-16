@@ -54,11 +54,11 @@ b, strong {
 	height: 48px;
 }
 .btn-index {
-	background-color: #021438; /* dk blue */ /*#276789; icon lt blue;*/
+	background-color: #070707; /* dk blue */ /*#276789; icon lt blue;*/
 	width: 180px;
 }
 .btn-index:hover {
-	background-color: #616161;
+	background-color: #777777;
 }
 .btn-index-yellow {
 	background-color: #10A37F;
@@ -176,8 +176,7 @@ b, strong {
 	margin-bottom: 1rem;
  }
 .img-coin {
-	background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/disciplina_coin_800.png") no-repeat center;
-	/*background: url("/app/images/index/Disciplina_COIN_red.png") no-repeat center;*/
+	background: url("/app/images/grnscreenrunner.png") no-repeat center;
 	height: 16rem;
 	background-size: contain;
 	padding: 0;
@@ -202,7 +201,7 @@ b, strong {
 	margin-bottom: 1.4rem;
 }
 .img-bkgnd-btm {
-	background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/formula_one.png") no-repeat center;
+	background: url("/app/images/index/wall_street_bw.png") no-repeat center;
 	height: 100vh;
 	background-size: cover;
 	padding: 0;
@@ -832,7 +831,7 @@ input[type="color"]:focus,
 		min-height: 20rem;
 	}
 	.img-bkgnd-btm {
-		background: url("https://flashmonkey-avatar.s3.us-west-2.amazonaws.com/f1_trophy.png") no-repeat center;
+		background: url("https://localhost/images/grnscreenrunner.png") no-repeat center;
 		height: 90vh;
 		background-size: cover;
 		padding: 0;

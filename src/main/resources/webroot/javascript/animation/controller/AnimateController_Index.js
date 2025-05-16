@@ -28,12 +28,11 @@
 
 class AnimateController_Index {
 
-
     constructor() {
         const phrases = [
-            "Earn credibility from your experience, academics, talent . . .",
-            "Gain credibility for meetings, interviews, posts . . .",
-            "View others credibility for hiring, promotions, business . . ."
+            "Sumo du jacsum loopi duc me forne, wekse yumki  . . .",
+            "Nakeed semaad yokuud lokud . . .",
+            "Jami kia lomi seeksak. Kebe zeebe zakee . . ."
         ];
         // Typewriter on index page
         const typeWriterElement = document.querySelector(".animate-typewriter");
@@ -43,7 +42,6 @@ class AnimateController_Index {
         typeWriter.startTop();
         // Observe elements when they're in the viewport
         this.observeScrollSections();
-
     }
 
 
