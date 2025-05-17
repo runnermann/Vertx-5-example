@@ -9,25 +9,25 @@ Said by a centurion poet about 49bc.
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>MyVIDI: </title>
+    <title>MyVICI: </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://MyVIDI.com/">
+    <link rel="canonical" href="https://MyVICI.com/">
     <link rel="icon" type="image/svg" href="/app/images/favicons/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="MyVIDI: A short description here">
+    <meta name="title" content="MyVICI: A short description here">
     <meta name="description" content="A short description here">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVIDI.com">
-    <meta property="og:title" content="MyVIDI: A short description here">
+    <meta property="og:url" content="https://MyVICI.com">
+    <meta property="og:title" content="MyVICI: A short description here">
     <meta property="og:description" content="A short description here">
     <#-- twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://MyVIDI.com">
-    <meta property="twitter:image" content="/images/formula_one_MyVIDI.png">
-    <meta property="twitter:title" content="MyVIDI: A short description here">
+    <meta property="twitter:url" content="https://MyVICI.com">
+    <meta property="twitter:image" content="/images/formula_one_MyVICI.png">
+    <meta property="twitter:title" content="MyVICI: A short description here">
     <meta property="twitter:description" content="A short description here">
 <#--    <#include "common/google_analytics.ftl">-->
     <link href="/app/style/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
@@ -103,13 +103,13 @@ Said by a centurion poet about 49bc.
             <div class="car-track">
                 <div class="car-item">"We naje taje doke yoke" <br> Kebee zebee makee zakee</div>
                 <div class="car-item">"Nakeed semaad yokuud lokuud" <br> bam bam long zome</div>
-                <div class="car-item">"I grok MyVIDI zupa noppa." <br> 100% of guuberage nokara</div>
+                <div class="car-item">"I grok MyVICI zupa noppa." <br> 100% of guuberage nokara</div>
                 <div class="car-item">"Jami kia lomi seeksak."<br> Kebe zeebe makee zakee</div>
             </div>
             <div class="car-track">
                 <div class="car-item">"We naje taje doke yoke" <br> Kebee zebee makee zakee</div>
                 <div class="car-item">"Nakeed semaad yokuud lokuud" <br> bam bam long zome</div>
-                <div class="car-item">"I grok MyVIDI zupa noppa." <br> 100% of guuberage nokara</div>
+                <div class="car-item">"I grok MyVICI zupa noppa." <br> 100% of guuberage nokara</div>
                 <div class="car-item">"Jami kia lomi seeksak."<br> Kebe zeebe makee zakee</div>
             </div>
         </div>
@@ -162,7 +162,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">MyVIDI: Looki duuksum yooki ugg</h2>
+                        <h2 class="bud-heading-style bud-subheader">MyVICI: Looki duuksum yooki ugg</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
@@ -185,7 +185,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">Cuum te MyVIDI sokee</h2>
+                        <h2 class="bud-heading-style bud-subheader">Cuum te MyVICI sokee</h2>
                         <p class="bud-body">
                             Eos ipsum iure eum beatae sapiente ut neque praesentium ea expedita reiciendis sed voluptas
                             impedit cum velit aspernatur qui inventore magnam. Eos deleniti quia et dicta odit et delectus
@@ -198,13 +198,13 @@ Said by a centurion poet about 49bc.
                             aut omnis Quis aut galisum dolorem eos iusto officia.
                         </p>
                         <p class="bud-body">
-                            MyVIDI 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
+                            MyVICI 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
                             non architecto internos eum quod molestiae aut dolor assumenda qui sequi nihil qui asperiores
                             accusamus et reiciendis impedit! Sed officia dolores ex iste voluptas est nisi magnam vel
                             repellat quidem.
                         </p>
                         <p class="bud-body">
-                            See <a class="link-light" href="https://MyVIDI.com/articles/7/mylinkhere">
+                            See <a class="link-light" href="https://MyVICI.com/articles/7/mylinkhere">
                                 Hakorem delos tod nescreatis olum dork prudascuulista guidem po. Ut alias nekeedsum</a>
                         </p>
                     </div>
@@ -238,14 +238,14 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of MyVIDI">
+                                         alt="A simple example of MyVICI">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <img class="section-img bud-img"
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of MyVIDI">
+                                         alt="A simple example of MyVICI">
                                 </div>
                             </div>
                             <#-- second row of images -->
@@ -255,7 +255,7 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="You with MyVIDI report">
+                                         alt="You with MyVICI report">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
 
@@ -263,7 +263,7 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="MyVIDI">
+                                         alt="MyVICI">
                                     <br>
                                 </div>
                             </div>
@@ -281,7 +281,7 @@ Said by a centurion poet about 49bc.
                             distinctio vel itaque pariatur et possimus laudantium sed dolorum nemo.
                         </p>
                         <p class="bud-body">
-                            Learn <a class="link-light" href="http://MyVIDI.com/articles/5/how-to-create-a-MyVIDI">how to create a MyVIDI and why you should.</a>
+                            Learn <a class="link-light" href="http://MyVICI.com/articles/5/how-to-create-a-MyVICI">how to create a MyVICI and why you should.</a>
                         </p>
                     </div>
                 </div>
@@ -295,19 +295,19 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">MyVIDI It</h2>
+                        <h2 class="bud-heading-style bud-subheader">MyVICI It</h2>
                         <br>
                         <div class="bud-img-section">
                             <img class="section-img bud-img"
                                  src="/app/images/grnscreenrunner.png"
                                  srcset="/app/images/grnscreenrunner.png"
                                  loading="eager"
-                                 alt="Simple example of MyVIDI">
+                                 alt="Simple example of MyVICI">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
-                            How does MyVIDI help?
+                            How does MyVICI help?
                         </p>
                         <p class="bud-body">
                             Lorem ipsum dolor sit amet. Ut iste obcaecati est facere doloremque aut assumenda accusantium
@@ -349,7 +349,7 @@ Said by a centurion poet about 49bc.
                                  src="/app/images/grnscreenrunner.png"
                                  srcset="/app/images/grnscreenrunner.png"
                                  loading="eager"
-                                 alt="MyVIDI.">
+                                 alt="MyVICI.">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
@@ -430,7 +430,7 @@ Said by a centurion poet about 49bc.
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6">
-<#--                    <h3 class="hero-white text-shdw scroll-section scroll-D">Finally and importantly, MyVIDI with it.</h3>-->
+<#--                    <h3 class="hero-white text-shdw scroll-section scroll-D">Finally and importantly, MyVICI with it.</h3>-->
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -453,7 +453,7 @@ Said by a centurion poet about 49bc.
             <div class="row hide-mobile">
                 <div class="col-md-12 text-center mt-15">
                     <p class="hero-blue text-white text-shdw">Win with</p>
-                    <h2 class="hero-blue-btm text-shdw">MyVIDI</h2>
+                    <h2 class="hero-blue-btm text-shdw">MyVICI</h2>
                 </div>
             </div>
         </div>

@@ -24,10 +24,10 @@
             <div class="row" >
                 <div class="col-md-12">
                     <p id="about_contact">
-                    <a class="sm-logo" href="https://www.instagram.com/MyVIDI/"><i class="fab fa-instagram"></i></a>
-                    <a class="sm-logo" href="https://www.facebook.com/MyVIDI/"><i class="fab fa-facebook"></i></a>
-                    <a class="sm-logo" href="https://www.linkedin.com/company/MyVIDI/"><i class="fab fa-linkedin"></i></a>
-                    <a class="sm-logo" href="https://www.youtube.com/@MyVIDI"><i class="fab fa-youtube"></i></a>
+                    <a class="sm-logo" href="https://www.instagram.com/MyVICI/"><i class="fab fa-instagram"></i></a>
+                    <a class="sm-logo" href="https://www.facebook.com/MyVICI/"><i class="fab fa-facebook"></i></a>
+                    <a class="sm-logo" href="https://www.linkedin.com/company/MyVICI/"><i class="fab fa-linkedin"></i></a>
+                    <a class="sm-logo" href="https://www.youtube.com/@MyVICI"><i class="fab fa-youtube"></i></a>
                     </p>
                 </div>
             </div>

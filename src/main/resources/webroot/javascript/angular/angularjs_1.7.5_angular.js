@@ -353,7 +353,7 @@ function isArrayLike(obj) {
  *
  * Unlike ES262's
  * [Array.prototype.forEach](http://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.18),
- * providing 'undefined' or 'null' values for `obj` will not throw a TypeError, but rather just
+ * proVICIng 'undefined' or 'null' values for `obj` will not throw a TypeError, but rather just
  * return the value provided.
  *
    ```js
@@ -4604,7 +4604,7 @@ function annotate(fn, strictDi, name) {
  * @description
  *
  * Register a **provider function** with the {@link auto.$injector $injector}. Provider functions
- * are constructor functions, whose instances are responsible for "providing" a factory for a
+ * are constructor functions, whose instances are responsible for "proVICIng" a factory for a
  * service.
  *
  * Service provider names start with the name of the service they provide followed by `Provider`.
@@ -7639,7 +7639,7 @@ function $TemplateCacheProvider() {
  * allow a component to have its properties bound to the controller, rather than to scope.
  *
  * After the controller is instantiated, the initial values of the isolate scope bindings will be bound to the controller
- * properties. You can access these bindings once they have been initialized by providing a controller method called
+ * properties. You can access these bindings once they have been initialized by proVICIng a controller method called
  * `$onInit`, which is called after all the controllers on an element have been constructed and had their bindings
  * initialized.
  *
@@ -7930,7 +7930,7 @@ function $TemplateCacheProvider() {
  *   property is ignored.
  * * **`{...}` (an object hash):** - map elements of the content onto transclusion "slots" in the template.
  *
- * **Mult-slot transclusion** is declared by providing an object for the `transclude` property.
+ * **Mult-slot transclusion** is declared by proVICIng an object for the `transclude` property.
  *
  * This object is a map where the keys are the name of the slot to fill and the value is an element selector
  * used to match the HTML to the slot. The element selector should be in normalized form (e.g. `myElement`)
@@ -28584,7 +28584,7 @@ var ngControllerDirective = [function() {
  *
  * *Note: This directive is only available in the `ng-csp` and `data-ng-csp` attribute form.*
  *
- * You can specify which of the CSP related AngularJS features should be deactivated by providing
+ * You can specify which of the CSP related AngularJS features should be deactivated by proVICIng
  * a value for the `ng-csp` attribute. The options are as follows:
  *
  * * no-inline-style: this stops AngularJS from injecting CSS styles into the DOM
@@ -31039,7 +31039,7 @@ addSetValidityMethod({
  *
  * - Binding the view into the model, which other directives such as `input`, `textarea` or `select`
  *   require.
- * - Providing validation behavior (i.e. required, number, email, url).
+ * - ProVICIng validation behavior (i.e. required, number, email, url).
  * - Keeping the state of the control (valid/invalid, dirty/pristine, touched/untouched, validation errors).
  * - Setting related css classes on the element (`ng-valid`, `ng-invalid`, `ng-dirty`, `ng-pristine`, `ng-touched`,
  *   `ng-untouched`, `ng-empty`, `ng-not-empty`) including animations.
@@ -31691,7 +31691,7 @@ defaultModelOptions = new ModelOptions({
  *
  * ## Specifying timezones
  *
- * You can specify the timezone that date/time input directives expect by providing its name in the
+ * You can specify the timezone that date/time input directives expect by proVICIng its name in the
  * `timezone` property.
  *
  *
@@ -32624,7 +32624,7 @@ var ngOptionsDirective = ['$compile', '$document', '$parse', function($compile, 
  * and explicit number rules throughout the rest of this documentation.
  *
  * ## Configuring ngPluralize
- * You configure ngPluralize by providing 2 attributes: `count` and `when`.
+ * You configure ngPluralize by proVICIng 2 attributes: `count` and `when`.
  * You can also provide an optional attribute, `offset`.
  *
  * The value of the `count` attribute can be either a string or an {@link guide/expression
@@ -33177,7 +33177,7 @@ var ngRefDirective = ['$parse', function($parse) {
  *
  * - The JavaScript specification does not define the order of keys
  *   returned for an object, so AngularJS relies on the order returned by the browser
- *   when running `for key in myObj`. Browsers generally follow the strategy of providing
+ *   when running `for key in myObj`. Browsers generally follow the strategy of proVICIng
  *   keys in the order in which they were defined, although there are exceptions when keys are deleted
  *   and reinstated. See the
  *   [MDN page on `delete` for more info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete#Cross-browser_notes).
@@ -33189,7 +33189,7 @@ var ngRefDirective = ['$parse', function($parse) {
  *   objects, and will throw an error if used with one.
  *
  * If you are hitting any of these limitations, the recommended workaround is to convert your object into an array
- * that is sorted into the order that you prefer before providing it to `ngRepeat`. You could
+ * that is sorted into the order that you prefer before proVICIng it to `ngRepeat`. You could
  * do this with a filter such as [toArrayFilter](http://ngmodules.org/modules/angular-toArrayFilter)
  * or implement a `$watch` on the object yourself.
  *
@@ -34521,7 +34521,7 @@ var ngSwitchDefaultDirective = ngDirective({
  * @description
  * Directive that marks the insertion point for the transcluded DOM of the nearest parent directive that uses transclusion.
  *
- * You can specify that you want to insert a named transclusion slot, instead of the default slot, by providing the slot name
+ * You can specify that you want to insert a named transclusion slot, instead of the default slot, by proVICIng the slot name
  * as the value of the `ng-transclude` or `ng-transclude-slot` attribute.
  *
  * If the transcluded content is not empty (i.e. contains one or more DOM nodes, including whitespace text nodes), any existing

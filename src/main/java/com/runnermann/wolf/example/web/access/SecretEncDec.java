@@ -14,24 +14,23 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 /**
  * <p>Singleton class</p>
  * <p>It is expected that the Main method of this class is used to encrypt the keys that will
- * be used in this program. Encryption should be done when a new set
- * of keys for the IAM are created. The key may be placed in the Error class. After encrypted,
+ * be used in this program. Encryption should be done when a new
+ * keys for are added. Keys are stored outside of the project. After encrypted,
  * two files are saved to the root. The zero.cpr file which contains the Cipher Encryption key ysed to
  * encrypt and decrypt the keys. The encrypted keys used by the DB and other capabilities are stored
  * in the one.enc file.
  * When needed, re-encrypt the keys
  * 1) uncomment the main class and the Error class.
- * 2) replace the key with the new S3 IAM keys.
- * 3) run the main method.
+ * 3) run the main method and watch the output. The output should be error free. If it has errors, run it a second time.
+ * It should not take more than twice. The first iteration creates the files, but sometimes the output shows errors.
  * 4) comment out the main method and the Error class.</p>
  *
- * NOTE! Comment out the plain text keys from the Error class before shipping!!!!!
  *
  * NOTE: if there is an error during runtime. Check that the keysfiles zero.cpr and one.enc are from the same
  * version. This is a serializable class. Files that are not built by the same version will cause a
  * runtime crash when Vertx is initialized.
  *
- * It's also highly recommended to remove logging.
+ * It's also highly recommended to remove logging except when it is needed during development.
  */
 public class SecretEncDec {
 
@@ -78,24 +77,13 @@ public class SecretEncDec {
     }
 
     /**
-     * Returns the keys for S3
-     * @return
-     */
-    public String[] getS3Errors() {
-        String[] sArr = new String[2];
-        sArr[0] = dec.arr[0];
-        sArr[1] = dec.arr[1];
-        return sArr;
-    }
-
-    /**
      * Returns the keys for the DB connection
      * @return
      */
     public String[] getDBConnectErrors() {
         String[] sArr = new String[2];
-        sArr[0] = dec.arr[8];
-        sArr[1] = dec.arr[9];
+        sArr[0] = dec.arr[2];
+        sArr[1] = dec.arr[3];
         return sArr;
     }
 
@@ -199,7 +187,7 @@ public class SecretEncDec {
     live key. And vice versa.
      */
 
-/*    @FMAnnotations.DoNotDeployMethod
+    @FMAnnotations.DoNotDeployMethod
     public static void main(String[] args) throws Exception {
        // *********** Encryption is conducted prior to a build or after creating a new IAM key for S3 *********** //
         String OUTPUT_FORMAT = "%-30s:%s";
@@ -220,7 +208,7 @@ public class SecretEncDec {
         innoEnc1.createSyekFile(icEnc, mError.cypherKeyFile);
         // 4. encrypt keys from hard drive with Secret/cypher key & iv
         Syek syekEnc = new Syek();
-        // s3 and Stripe accessKey, Cipher SecretKey and Cipher IV
+        // Cipher SecretKey and Cipher IV
         Error error = new Error();
         for(int i = 0; i < syekEnc.arr.length; i++) {
             syekEnc.arr[i] = Util.encryptWithPrefixIV(error.arr[i].getBytes(UTF_8), icEnc.one, iv);
@@ -297,21 +285,26 @@ public class SecretEncDec {
              //* You can have as many keys as you need, but update the length of the array in the ARR_LENGTH constant at
              //* the top.
 
+            // To get a password and user name after it has been encrypted. Usage:
+            //      SecretEncDec sed = new SecretEncDec.getInstance();
+            //      String pw = sed[0];
+            //      String user = sed[1]
+
             //InputStream queriesInputStream = DatabaseHandler.class.getResourceAsStream("/ServerSecrets.properties");
             InputStream queriesInputStream = new FileInputStream(filePathStr);
 
             Properties secretProps = new Properties();
             secretProps.load(queriesInputStream);
 
-            arr[0] = secretProps.getProperty("encryptionKey");
-            arr[1] = secretProps.getProperty("CSRFkey");
+            arr[0] = secretProps.getProperty("encryptionKey"); // This is always needed. Create this key and store in the .properies file.
+            arr[1] = secretProps.getProperty("CSRFkey"); // This is always needed. Create this key and store it in the .properties file.
             arr[2] = secretProps.getProperty("dbPW");
             arr[3] = secretProps.getProperty("dbUser");
             arr[4] = secretProps.getProperty("s3Secret");
             arr[5] = secretProps.getProperty("oauthGithubId");
             arr[6] = secretProps.getProperty("oauthGithubSecret");
-            arr[7] = secretProps.getProperty("linkedinID");
-            arr[8] = secretProps.getProperty("linkedinSecret");
+            arr[7] = secretProps.getProperty("linkedinID"); // Get this from Linkedin
+            arr[8] = secretProps.getProperty("linkedinSecret"); // Get this from Linkedin
 
             queriesInputStream.close();
 

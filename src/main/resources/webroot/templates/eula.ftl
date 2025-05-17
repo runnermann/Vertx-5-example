@@ -9,7 +9,7 @@
                 <br>
                 <br>
                 <br>
-                <h1>MyVIDI End User License Agreement (EULA)</h1>
+                <h1>MyVICI End User License Agreement (EULA)</h1>
                 <br>
                 <br>
             </div>

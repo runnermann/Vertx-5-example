@@ -3774,7 +3774,7 @@ var ngAnimateSwapDirective = ['$animate', '$rootScope', function($animate, $root
  * The nice thing here is that we can save bandwidth by sticking to our CSS-based animation code and we don't need to rely on a 3rd-party animation framework.
  *
  * The `$animateCss` service is very powerful since we can feed in all kinds of extra properties that will be evaluated and fed into a CSS transition or
- * keyframe animation. For example if we wanted to animate the height of an element while adding and removing classes then we can do so by providing that
+ * keyframe animation. For example if we wanted to animate the height of an element while adding and removing classes then we can do so by proVICIng that
  * data into `$animateCss` directly:
  *
  * ```js

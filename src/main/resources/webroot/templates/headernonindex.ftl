@@ -12,25 +12,25 @@
 
     <#-- google & misc search engines -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="MyVIDI">
-    <meta name="description" content="MyVIDI | A short description here.">
+    <meta name="title" content="MyVICI">
+    <meta name="description" content="MyVICI | A short description here.">
 
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVIDI.com">
-    <meta property="og:title" content="MyVIDI">
+    <meta property="og:url" content="https://MyVICI.com">
+    <meta property="og:title" content="MyVICI">
     <meta property="og:description" content=" A short description here">
 
     <#--  <meta property="og:image" content="/images/${photo_link}">-->
     <#--  &lt;#&ndash; Twitter &ndash;&gt;-->
     <#--  <meta property="twitter:card" content="summary_large_image">-->
-    <#--  <meta property="twitter:url" content="https://MyVIDI.com/${url_endpoint}">-->
+    <#--  <meta property="twitter:url" content="https://MyVICI.com/${url_endpoint}">-->
     <#--  <meta property="twitter:title" content="TopScholars">-->
     <#--  <meta property="twitter:description" content="Academic Statistics for ${username}">-->
     <#--  <meta property="twitter:image" content="/images/${photo_link}">-->
 
     <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
-    <title>MyVIDI</title>
+    <title>MyVICI</title>
     <link rel="stylesheet" type="text/css" href="/app/style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />

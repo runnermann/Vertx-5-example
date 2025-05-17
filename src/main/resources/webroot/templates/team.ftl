@@ -2,14 +2,14 @@
 <html lang="en-us" ng-app="userApp">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://MyVIDI.com/team">
+    <link rel="canonical" href="https://MyVICI.com/team">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="Team page">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVIDI.com">
-    <meta property="og:title" content="MyVIDI">
+    <meta property="og:url" content="https://MyVICI.com">
+    <meta property="og:title" content="MyVICI">
     <#include "common/styles_block.ftl">
 </head>
 <body>
@@ -36,7 +36,7 @@
                         <div class="card card-custom bg-dark border-dark">
                             <div class="card-body" style="overflow-y: auto">
                                 <div class="center-text mb-5">
-                                    <img src="/images/${people.photo_link}" class="rounded-1" alt="MyVIDI team member" width="214" height="214">
+                                    <img src="/images/${people.photo_link}" class="rounded-1" alt="MyVICI team member" width="214" height="214">
                                 </div>
                                 <h4 class="card-title">${people.name}</h4>
                                 <hr class="mt-1">

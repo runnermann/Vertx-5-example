@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.stream.Collector;
 
 
 public class PageHandler {
@@ -52,79 +52,127 @@ public class PageHandler {
     }
 
 
+    /**
+     * Get all blogs and output a list. This does NOT limit the number, e.g. paginate,
+     * nor is the output in a logical order.
+     * @param context
+     * @param templateEngine
+     */
     void blogsAllPageHandler(RoutingContext context, FreeMarkerTemplateEngine templateEngine) {
         List<String> params = new ArrayList<>();
+
         dbHandler.doFetch(SqlQuery.FETCH_ALL_BLOGS, params)
-        .onComplete(res -> {
+                .onComplete(res -> {
+                    if (res.failed()) {
+                        context.fail(res.cause());
+                        return;
+                    }
 
-            JsonArray returnArry = new JsonArray();
-            if(res.succeeded()) {
-                RowSet<Row> rows = res.result();
-                // Slower but we won't get the page endpoint if we use stream.parallel
-                rows.forEach(row -> {
-                    long id = row.getLong("blog_id");
-                    JsonObject jobObj = new JsonObject()
-                            .put("blog_id", id)
-                            .put("image_card_link", row.getString("image_card_link"))
-                            .put("image_card_alt", row.getString("image_card_alt"))
-                            .put("title", row.getString("title"))
-                            .put("card_intro", row.getString("card_intro"))
-                            .put("create_date", row.getLocalDate("create_date"))
-                            .put("author", row.getString("author"))
-                            .put("read_time", row.getInteger("read_time"))
-                            .put("page_endpoint", "/articles/" + id + "/"
-                                    + row.getString("page_endpoint"));
-                    returnArry.add(jobObj);
+                    // Step 1: Process the result in parallel
+                    RowSet<Row> rows = res.result();
+                    JsonArray returnArry = rows.stream()
+                            .parallel() // Enable parallel processing
+                            .map(row -> {
+                                long id = row.getLong("blog_id");
+
+                                // Construct the JsonObject for each row
+                                return new JsonObject()
+                                        .put("blog_id", id)
+                                        .put("image_card_link", row.getString("image_card_link"))
+                                        .put("image_card_alt", row.getString("image_card_alt"))
+                                        .put("title", row.getString("title"))
+                                        .put("card_intro", row.getString("card_intro"))
+                                        .put("create_date", row.getLocalDate("create_date"))
+                                        .put("author", row.getString("author"))
+                                        .put("read_time", row.getInteger("read_time"))
+                                        // The "page_endpoint" field requires special handling
+                                        .put("page_endpoint", "/articles/" + id + "/" + row.getString("page_endpoint"));
+                            })
+                            .collect(Collector.of(
+                                    JsonArray::new, // Supplier: Create a new JsonArray
+                                    JsonArray::add, // Accumulator: Add each JsonObject to the JsonArray
+                                    JsonArray::addAll // Combiner: Combine JsonArrays in parallel
+                            ));
+
+                    // Step 2: Add processed data to the context
+                    context.put("blogData", returnArry);
+
+                    // Step 3: Render the page
+                    Page page = new Page();
+                    page.commonHandlerWPolicy(context, "webroot/templates/blog_listing.ftl", templateEngine);
                 });
-                context.put("blogData", returnArry);
-            }
-
-            Page page = new Page();
-            page.commonHandlerWPolicy(context, "webroot/templates/blog_listing.ftl", templateEngine);
-        });
     }
 
 
+
     /**
-     * Handles blogs either as articles format or as a blog format depending on the selected article Boolean in the
+     * Handles blogs either as articles format or as a blog format depending on the 'selected article' Boolean in the
      * public.blog table.
      * @param context
      * @param templateEngine
      */
     void blogPageHandler(RoutingContext context, FreeMarkerTemplateEngine templateEngine) {
-            String id = context.request().getParam("id");
-            List<String> params = new ArrayList<>();
-            params.add(id);
+        String id = context.request().getParam("id");
+        List<String> params = new ArrayList<>();
+        params.add(id);
 
-            JsonArray blogDataAry = new JsonArray();
-
-            dbHandler.doFetch(SqlQuery.FETCH_BLOG_BY_ID, params)
-                    .onComplete(res -> {
-                    RowSet<Row> rows = res.result();
-                    rows.stream().parallel().map(row -> {
-                       return blogDataAry.add(row.toJson());
-                    });
-                    context.put("blogData", blogDataAry);
-                })
+        dbHandler.doFetch(SqlQuery.FETCH_BLOG_BY_ID, params)
                 .onComplete(res -> {
-                    JsonArray rowData = new JsonArray();
+                    if (res.failed()) {
+                        context.fail(res.cause());
+                        return;
+                    }
+
+                    // Step 1: Process the result of FETCH_BLOG_BY_ID in parallel
+                    RowSet<Row> rows = res.result();
+                    JsonArray blogDataAry = rows.stream()
+                            .parallel()                          // Enable parallel processing
+                            .map(Row::toJson)                    // Convert each row to JSON
+                            .collect(Collector.of(               // Collect result into a JsonArray
+                                    JsonArray::new,                  // Create new JsonArray
+                                    JsonArray::add,                  // Add element to JsonArray
+                                    JsonArray::addAll                // Combine results in parallel
+                            ));
+
+                    context.put("blogData", blogDataAry);
+
+                    // Step 2: Fetch the rows for FETCH_BLOG_ROWS and process them
                     dbHandler.doFetch(SqlQuery.FETCH_BLOG_ROWS, params)
                             .onComplete(resi -> {
-                                if (resi.succeeded()) {
-                                    RowSet<Row> rows = resi.result();
-                                    rows.stream().parallel().map(row -> {
-                                        return rowData.add(row.toJson());
-                                    });
-                                    context.put("rowData", rowData);
+                                if (resi.failed()) {
+                                    context.fail(resi.cause());
+                                    return;
                                 }
-                            }).onComplete(resi -> {
+
+                                RowSet<Row> rowSet = resi.result();
+                                JsonArray rowData = rowSet.stream()
+                                        .parallel()                      // Enable parallel processing
+                                        .map(Row::toJson)                // Convert each row to JSON
+                                        .collect(Collector.of(
+                                                JsonArray::new,              // Create new JsonArray
+                                                JsonArray::add,              // Add element to JsonArray
+                                                JsonArray::addAll            // Combine results in parallel
+                                        ));
+
+                                context.put("rowData", rowData);
+
+                                // Step 3: Decide the template based on the "article" value
                                 Page page = new Page();
-                                if(blogDataAry.getJsonObject(0).getBoolean("article")) {
-                                    page.commonHandlerWPolicy(context, "webroot/templates/blog/article_template.ftl", templateEngine);
+                                if (blogDataAry.getJsonObject(0).getBoolean("article")) {
+                                    page.commonHandlerWPolicy(
+                                            context,
+                                            "webroot/templates/blog/article_template.ftl",
+                                            templateEngine
+                                    );
                                 } else {
-                                    page.commonHandlerWPolicy(context, "webroot/templates/blog/blog_template.ftl", templateEngine);
+                                    page.commonHandlerWPolicy(
+                                            context,
+                                            "webroot/templates/blog/blog_template.ftl",
+                                            templateEngine
+                                    );
                                 }
                             });
                 });
-            }
+    }
+
 }

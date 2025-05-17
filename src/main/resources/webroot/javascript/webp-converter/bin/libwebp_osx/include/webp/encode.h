@@ -186,7 +186,7 @@ static WEBP_INLINE int WebPConfigPreset(WebPConfig* config,
 
 // Activate the lossless compression mode with the desired efficiency level
 // between 0 (fastest, lowest compression) and 9 (slower, best compression).
-// A good default level is '6', providing a fair tradeoff between compression
+// A good default level is '6', proVICIng a fair tradeoff between compression
 // speed and final compressed size.
 // This function will overwrite several fields from config: 'method', 'quality'
 // and 'lossless'. Returns false in case of parameter error.

@@ -81,9 +81,7 @@ public class DatabaseHandler {
                 .build();
     }
 
-
-
-
+    
     /**
      * A SELECT statement QUERY
      * NOTE: That we expect the query to contain numbered params based on the index of the List.
@@ -96,7 +94,6 @@ public class DatabaseHandler {
      */
     public Future<RowSet<Row>> doFetch(SqlQuery sqlQuery, List<String> params ) {
         Promise<RowSet<Row>> promise = Promise.promise();
-
         // If params are provided, else no params are used.
         if(!params.isEmpty()) {
             dbClient
