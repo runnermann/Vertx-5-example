@@ -1,3 +1,6 @@
+Inline-style:
+![alt text](https://github.com/runnermann/ksVertex-web-five/src/README_MEDIA/index_and_OAuth.mov "ksVertx Demo")
+
 # Vert.x 5 Website Example using Freemarker Templates, PostgreSQL, and Bootstrap 
 
 This is an upgraded project from Vert.x 3
