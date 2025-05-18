@@ -9,29 +9,27 @@ Said by a centurion poet about 49bc.
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>MyVICI: </title>
+    <title>VertxExample: </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://MyVICI.com/">
+    <link rel="canonical" href="https://VertxExample.com/">
     <link rel="icon" type="image/svg" href="/app/images/favicons/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="MyVICI: A short description here">
+    <meta name="title" content="VertxExample: A short description here">
     <meta name="description" content="A short description here">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVICI.com">
-    <meta property="og:title" content="MyVICI: A short description here">
+    <meta property="og:url" content="https://VertxExample.com">
+    <meta property="og:title" content="VertxExample: A short description here">
     <meta property="og:description" content="A short description here">
     <#-- twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://MyVICI.com">
-    <meta property="twitter:image" content="/images/formula_one_MyVICI.png">
-    <meta property="twitter:title" content="MyVICI: A short description here">
+    <meta property="twitter:url" content="https://VertxExample.com">
+    <meta property="twitter:image" content="/images/formula_one_VertxExample.png">
+    <meta property="twitter:title" content="VertxExample: A short description here">
     <meta property="twitter:description" content="A short description here">
-<#--    <#include "common/google_analytics.ftl">-->
     <link href="/app/style/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
-<#--    <link href="/app/style/tog-dropdown.css" rel="stylesheet" type="text/css">-->
     <link href="/app/style/idx-style.css" rel="stylesheet" type="text/css">
     <#-- Used for Social Media Icons -->
     <link href="/app/style/fontawesome/css/all.css" rel="stylesheet" type="text/css">
@@ -42,6 +40,7 @@ Said by a centurion poet about 49bc.
     <link href="/app/style/h_scroll_infinite.css" rel="stylesheet" type="text/css">
     <link href="/app/style/button_ripple.css" rel="stylesheet" type="text/css">
     <link href="/app/style/typewriter_form.css" rel="stylesheet" type="text/css">
+    <link href="/app/style/animate_scroll.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -57,8 +56,8 @@ Said by a centurion poet about 49bc.
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="top-margin-tagline ht-220">
-                        <h1 class="hero-blue">We namee tam. Hiku toke yokee.
-                        Reek like Mike.</h1>
+                        <h1 class="hero-blue">Reactive async performance. Full featured capabilities.
+                        Vert.x server example.</h1>
                         <br>
                     </div>
                 </div>
@@ -98,19 +97,26 @@ Said by a centurion poet about 49bc.
 <#-- END UPPER HERO -->
 <!-- infinite h scroll carousel -->
 <section>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Who's using Vert.x</h2>
+        </div>
+    </div>
     <div class="car">
-        <div class="car-container">
+        <div class="my-16 flex max-w-full flex-col items-start gap-14 overflow-x-hidden">
             <div class="car-track">
-                <div class="car-item">"We naje taje doke yoke" <br> Kebee zebee makee zakee</div>
-                <div class="car-item">"Nakeed semaad yokuud lokuud" <br> bam bam long zome</div>
-                <div class="car-item">"I grok MyVICI zupa noppa." <br> 100% of guuberage nokara</div>
-                <div class="car-item">"Jami kia lomi seeksak."<br> Kebe zeebe makee zakee</div>
+                <div class="car-item">"KnocScore"</div>
+                <div class="car-item">"Ing"</div>
+                <div class="car-item">"ticketmaster"</div>
+                <div class="car-item">"hulu"</div>
+                <div class="car-item">"Groupon"</div>
             </div>
-            <div class="car-track">
-                <div class="car-item">"We naje taje doke yoke" <br> Kebee zebee makee zakee</div>
-                <div class="car-item">"Nakeed semaad yokuud lokuud" <br> bam bam long zome</div>
-                <div class="car-item">"I grok MyVICI zupa noppa." <br> 100% of guuberage nokara</div>
-                <div class="car-item">"Jami kia lomi seeksak."<br> Kebe zeebe makee zakee</div>
+            <div class="my-16 flex max-w-full flex-col items-start gap-14 overflow-x-hidden">
+                <div class="car-item">"KnocScore"/div>
+                    <div class="car-item">"Ing"</div>
+                    <div class="car-item">"ticketmaster"</div>
+                    <div class="car-item">"hulu"</div>
+                    <div class="car-item">"Groupon"</div>
             </div>
         </div>
     </div>
@@ -162,7 +168,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">MyVICI: Looki duuksum yooki ugg</h2>
+                        <h2 class="bud-heading-style bud-subheader">VertxExample: Looki duuksum yooki ugg</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
@@ -185,7 +191,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">Cuum te MyVICI sokee</h2>
+                        <h2 class="bud-heading-style bud-subheader">Cuum te VertxExample sokee</h2>
                         <p class="bud-body">
                             Eos ipsum iure eum beatae sapiente ut neque praesentium ea expedita reiciendis sed voluptas
                             impedit cum velit aspernatur qui inventore magnam. Eos deleniti quia et dicta odit et delectus
@@ -198,13 +204,13 @@ Said by a centurion poet about 49bc.
                             aut omnis Quis aut galisum dolorem eos iusto officia.
                         </p>
                         <p class="bud-body">
-                            MyVICI 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
+                            VertxExample 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
                             non architecto internos eum quod molestiae aut dolor assumenda qui sequi nihil qui asperiores
                             accusamus et reiciendis impedit! Sed officia dolores ex iste voluptas est nisi magnam vel
                             repellat quidem.
                         </p>
                         <p class="bud-body">
-                            See <a class="link-light" href="https://MyVICI.com/articles/7/mylinkhere">
+                            See <a class="link-light" href="https://VertxExample.com/articles/7/mylinkhere">
                                 Hakorem delos tod nescreatis olum dork prudascuulista guidem po. Ut alias nekeedsum</a>
                         </p>
                     </div>
@@ -238,14 +244,14 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of MyVICI">
+                                         alt="A simple example of VertxExample">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <img class="section-img bud-img"
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of MyVICI">
+                                         alt="A simple example of VertxExample">
                                 </div>
                             </div>
                             <#-- second row of images -->
@@ -255,7 +261,7 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="You with MyVICI report">
+                                         alt="You with VertxExample report">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
 
@@ -263,7 +269,7 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="MyVICI">
+                                         alt="VertxExample">
                                     <br>
                                 </div>
                             </div>
@@ -281,7 +287,7 @@ Said by a centurion poet about 49bc.
                             distinctio vel itaque pariatur et possimus laudantium sed dolorum nemo.
                         </p>
                         <p class="bud-body">
-                            Learn <a class="link-light" href="http://MyVICI.com/articles/5/how-to-create-a-MyVICI">how to create a MyVICI and why you should.</a>
+                            Learn <a class="link-light" href="http://VertxExample.com/articles/5/how-to-create-a-VertxExample">how to create a VertxExample and why you should.</a>
                         </p>
                     </div>
                 </div>
@@ -295,19 +301,19 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">MyVICI It</h2>
+                        <h2 class="bud-heading-style bud-subheader">VertxExample It</h2>
                         <br>
                         <div class="bud-img-section">
                             <img class="section-img bud-img"
                                  src="/app/images/grnscreenrunner.png"
                                  srcset="/app/images/grnscreenrunner.png"
                                  loading="eager"
-                                 alt="Simple example of MyVICI">
+                                 alt="Simple example of VertxExample">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
-                            How does MyVICI help?
+                            How does VertxExample help?
                         </p>
                         <p class="bud-body">
                             Lorem ipsum dolor sit amet. Ut iste obcaecati est facere doloremque aut assumenda accusantium
@@ -349,7 +355,7 @@ Said by a centurion poet about 49bc.
                                  src="/app/images/grnscreenrunner.png"
                                  srcset="/app/images/grnscreenrunner.png"
                                  loading="eager"
-                                 alt="MyVICI.">
+                                 alt="VertxExample.">
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
@@ -430,7 +436,7 @@ Said by a centurion poet about 49bc.
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6">
-<#--                    <h3 class="hero-white text-shdw scroll-section scroll-D">Finally and importantly, MyVICI with it.</h3>-->
+<#--                    <h3 class="hero-white text-shdw scroll-section scroll-D">Finally and importantly, VertxExample with it.</h3>-->
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -452,8 +458,7 @@ Said by a centurion poet about 49bc.
             <#-- ROW -->
             <div class="row hide-mobile">
                 <div class="col-md-12 text-center mt-15">
-                    <p class="hero-blue text-white text-shdw">Win with</p>
-                    <h2 class="hero-blue-btm text-shdw">MyVICI</h2>
+                    <h2 class="hero-blue-btm text-shdw">Vert.x Example</h2>
                 </div>
             </div>
         </div>

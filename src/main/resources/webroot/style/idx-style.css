@@ -54,11 +54,11 @@ b, strong {
 	height: 48px;
 }
 .btn-index {
-	background-color: #070707; /* dk blue */ /*#276789; icon lt blue;*/
+	background-color: #782B90; /* dk blue */ /*#276789; icon lt blue;*/
 	width: 180px;
 }
 .btn-index:hover {
-	background-color: #777777;
+	background-color: #783b99;
 }
 .btn-index-yellow {
 	background-color: #10A37F;

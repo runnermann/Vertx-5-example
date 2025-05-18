@@ -2,13 +2,13 @@
 <html lang="en-us" ng-app="userApp">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://MyVICI.com/jobs_all">
+    <link rel="canonical" href="https://VertxExample.com/jobs_all">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="Jobs and Internships">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVICI.com/jobs_all">
+    <meta property="og:url" content="https://VertxExample.com/jobs_all">
     <meta property="og:title" content="Jobs and Internships">
     <#include "common/styles_block.ftl">
 </head>
@@ -28,7 +28,7 @@
                 <hr>
                 <br>
                 <h2>About Us:</h2>
-                <p>MyVICI is a disruptive, bootstrapped, early-stage tech start-up based in the SF Bay Area.
+                <p>VertxExample is a disruptive, bootstrapped, early-stage tech start-up based in the SF Bay Area.
                     You will be among the first to join the company. Some examples of successful bootstrapped companies
                     are GoPro, Microsoft, Dell Computers, Oracle and GitHub to name a few.</p>
                 <p>We are building a novel interactive learning and teaching platform for higher education -- an actual
@@ -55,7 +55,7 @@
                 <br>
                 <h2>How to apply:</h2>
                 <p>Send your CV and the required documents to:
-                    <a id="my_email" href="mailto:opportunities@MyVICI.com"><i class="fas fa-paper-plane"></i>Contact</a>opportunities@MyVICI.com</p>
+                    <a id="my_email" href="mailto:opportunities@VertxExample.com"><i class="fas fa-paper-plane"></i>Contact</a>opportunities@VertxExample.com</p>
                 <br>
                 <br>
                 <h2>Open positions:</h2>

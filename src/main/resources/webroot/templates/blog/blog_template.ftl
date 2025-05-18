@@ -3,20 +3,20 @@
 <head>
     <#list blogData as meta>
             <meta charset="UTF-8">
-            <link rel="canonical" href="https://MyVICI.com/articles/${meta.id}/${meta.page_endpoint}">
+            <link rel="canonical" href="https://VertxExample.com/articles/${meta.id}/${meta.page_endpoint}">
             <#include "../common/icon_block.ftl">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${meta.title}</title>
             <meta name="description" content="${meta.meta_descript}">
             <#-- Open Graph / Facebook -->
             <meta property="og:type" content="website">
-            <meta property="og:url" content="https://MyVICI.com/articles/${meta.page_endpoint}">
+            <meta property="og:url" content="https://VertxExample.com/articles/${meta.page_endpoint}">
             <meta property="og:title" content="${meta.title}">
             <meta property="og:description" content="${meta.meta_descript}">
             <meta property="og:image" content="${meta.image_twitter_link}">
             <#-- Twitter -->
             <meta property="twitter:card" content="summary_large_image">
-            <meta property="twitter:url" content="https://MyVICI.com/articles/${meta.page_endpoint}">
+            <meta property="twitter:url" content="https://VertxExample.com/articles/${meta.page_endpoint}">
             <meta property="twitter:title" content="${meta.title}">
             <meta property="twitter:description" content="${meta.meta_descript}">
             <meta property="twitter:image" content="${meta.image_twitter_link}">
@@ -50,7 +50,7 @@
                         </#if>
                         <br>
                         <br>
-                        <span class="meta"><b>MyVICI Articles</b></span>
+                        <span class="meta"><b>VertxExample Articles</b></span>
                         <br>
                         <span><b>Read Time:</b> ${rdata.read_time} minutes</span>
                         <br>

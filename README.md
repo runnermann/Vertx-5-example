@@ -240,8 +240,8 @@ A paragraph may be a block quote simply by adding it in the text. `<blockquote>.
 ## Using Freemarker Templates
 The BlogListing table and methods ` PageHandler(...) ` populates a Freemarker Template. The template is located at `resources.webroot.templates.bloglisting.ftl`. FreeMarker makes it simple to provide a complex structure without repeating the html. 
 
-## Notes on table names
-If you makes changes, the ` blogPageHandler(...) ` method will output the table data using the same names as the columns. The ` article_template.ftl ` is expecting the table names as they are provided in the table. But it is not automatic, you must ensure your column names match the template or you will get an error. You can adopt new names, as an example the ` blogsAllPageHandler ` serializes the returned data from the table into json. 
+## Notes on column names
+If you makes changes, the ` blogPageHandler(...) ` method will output the table data using the same names as the columns. The ` article_template.ftl ` and ` blog_template.ftl ` are expecting the variable names as they are provided in the table as Column Names. But it is not automatic, you must ensure your column names match the template or you will get an error. You can adopt new column names, and make changes to the queries without changes to the ` blogPageHandler(...) `. The ` blogsAllPageHandler(...) ` will require reconfiguration as well since it serializes the returned data from the table into json manually. 
 
 ## Notes on the structure
 
@@ -251,7 +251,7 @@ The Vert.x Server's logic is under java. resources contains the front end logic,
 
 We've removed the convienient use of the Database Verticle. We do not see it mentioned except in the "Gentle Introduction to Asynchronous ..." that was introduced in earlier versions of Vert.x. We've also removed use the Database Service but we've adopted some of the logic that made it convenient to develop. 
 
-The database logic can be found under the `database` package. The ` DataBaseHandler ` class contains most of the top level logic for the queries. The SqlQuery Enum Class is for convienience. We divide queries between Select, upsert, and common operations. The actual queries are written as any SQL query using a tool that helps us write, test, and optimize it. We can copy the query directly into a properties file and modify it using ` $1,  $2 ` etc to get the data from the params. This is convenient. We then place the queries in a map held in the appropriate Query Class. 
+The database logic can be found under the `database` package. The ` DataBaseHandler ` class contains most of the top level logic for the queries. The SqlQuery Enum Class is for convenience. We divide queries into separate classes between Select, Upsert, and common Operations. The actual queries are written as any SQL query using a tool that helps us write, test, and optimize it. We can copy the query directly into a properties file and modify it using ` $1,  $2 ` etc to get the data from the params. This is convenient. We then place the queries in a map held in the appropriate Query Class. 
 
 
 

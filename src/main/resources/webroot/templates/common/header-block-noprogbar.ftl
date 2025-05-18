@@ -31,7 +31,7 @@
     <header>
         <nav class="navbar bg-body-tertiary" id="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="https://MyVICI.com"><img src="/app/images/LOGO/topscholars/white/logo_horizontal_464x88.png" class="header-logo"></a>
+                <a class="navbar-brand" href="https://VertxExample.com"><img src="/app/images/LOGO/topscholars/white/logo_horizontal_464x88.png" class="header-logo"></a>
                 <div class="navbar-nav float-right">
                 </div>
             </div>

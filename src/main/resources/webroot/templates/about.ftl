@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <title>About MyVICI&trade;</title>
+    <title>About VertxExample&trade;</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://MyVICI.com/about">
+    <link rel="canonical" href="https://VertxExample.com/about">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="About MyVICI&trade;">
+    <meta name="title" content="About VertxExample&trade;">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVICI.com/about">
-    <meta property="og:title" content="About MyVICI&trade;">
+    <meta property="og:url" content="https://VertxExample.com/about">
+    <meta property="og:title" content="About VertxExample&trade;">
     <meta property="og:description" content="A short description here.">
     <#-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://MyVICI.com/about">
-    <meta property="twitter:title" content="about MyVICI">
+    <meta property="twitter:url" content="https://VertxExample.com/about">
+    <meta property="twitter:title" content="about VertxExample">
     <meta property="twitter:description" content="A short description here.">
-    <meta property="twitter:image" content="https://MyVICI.com/app/images/twitter/centurion_MyVICI_twitter_card.png">
+    <meta property="twitter:image" content="https://VertxExample.com/app/images/twitter/centurion_VertxExample_twitter_card.png">
     <#include "common/google_analytics.ftl">
     <!-- styles -->
     <#include "common/styles_block_infopg.ftl">
@@ -59,8 +59,8 @@
             <div class="col-md-6">
                 <div class="top-margin-section">
                     <div class="about-hero_text">
-                        <h1 class="eyebrow mb-4">About MyVICI&trade;</h1>
-                        <p class="act-like-h1 mb-4">MyVICI</p>
+                        <h1 class="eyebrow mb-4">About VertxExample&trade;</h1>
+                        <p class="act-like-h1 mb-4">VertxExample</p>
                         <p class="act-like-h4 mb-2">pronounced 'MIX'</p>
                         <p>short for MIX</p>
                     </div>
@@ -70,14 +70,14 @@
                 <div class="top-margin-section">
                     <div class="code-h6">
                         <br>
-                        <p>A MyVICI is an objective measurement of knowledge, athletics, and skills. In professional meetings, an
-                            individual can use a MyVICI as a concrete unbiased credential to validate themselves
+                        <p>A VertxExample is an objective measurement of knowledge, athletics, and skills. In professional meetings, an
+                            individual can use a VertxExample as a concrete unbiased credential to validate themselves
                             to others.</p>
                         <p>Just as
                             a credit score reflects an individual's financial reliability when applying for a loan,
-                            MyVICI reflects a professional's work ethic, and proven abilities within their field. When seeking
-                            employment, a higher MyVICI translates to superior performance capabilities,
-                            leading to better job prospects and terms. Professionals with a higher MyVICI are
+                            VertxExample reflects a professional's work ethic, and proven abilities within their field. When seeking
+                            employment, a higher VertxExample translates to superior performance capabilities,
+                            leading to better job prospects and terms. Professionals with a higher VertxExample are
                             more competitive and would have greater opportunities for career growth, increased
                             responsibilities, and higher salary offers.</p>
                     </div>
@@ -104,7 +104,7 @@
                         <div class="center-text mb-5 top-margin-section">
                             <img src="/images/${people.photo_link}"
                                  class="rounded-1"
-                                 alt="MyVICI team member"
+                                 alt="VertxExample team member"
                                  width="214"
                                  height="214">
                         </div>

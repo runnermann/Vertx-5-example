@@ -2,23 +2,23 @@
 <html lang="en-us">
 <head>
     <meta charset="UTF-8">
-    <link rel="canonical" href="https://MyVICI.com/blogs">
+    <link rel="canonical" href="https://VertxExample.com/blogs">
     <#include "common/icon_block.ftl">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>MyVICI&trade;</title>
+    <title>VertxExample&trade;</title>
     <meta name="description" content="A short description">
     <#-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://MyVICI.com/blogs">
+    <meta property="og:url" content="https://VertxExample.com/blogs">
     <meta property="og:title" content="Title">
     <meta property="og:description" content="A short description">
-    <meta property="og:image" content="https://MyVICI.com/app/images/blog/hiring_top_talent.png">
+    <meta property="og:image" content="https://VertxExample.com/app/images/blog/hiring_top_talent.png">
     <#-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://MyVICI.com/blogs">
+    <meta property="twitter:url" content="https://VertxExample.com/blogs">
     <meta property="twitter:title" content="Title">
     <meta property="twitter:description" content="A short description">
-    <meta property="twitter:image" content="https://MyVICI.com/app/images/blog/hiring_top_talent.png">
+    <meta property="twitter:image" content="https://VertxExample.com/app/images/blog/hiring_top_talent.png">
 
 <#--    <#include "common/google_analytics.ftl">-->
     <#include "common/styles_block_infopg.ftl">

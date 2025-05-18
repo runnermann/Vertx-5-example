@@ -30,9 +30,8 @@ class AnimateController_Index {
 
     constructor() {
         const phrases = [
-            "Sumo du jacsum loopi duc me forne, wekse yumki  . . .",
-            "Nakeed semaad yokuud lokud . . .",
-            "Jami kia lomi seeksak. Kebe zeebe zakee . . ."
+            "Vert.x Demo for....", "Integrated blog . . .","Integrated OAuth2  . . .",
+            "Templates . . .", "Search Engine Optimization . . ."
         ];
         // Typewriter on index page
         const typeWriterElement = document.querySelector(".animate-typewriter");
