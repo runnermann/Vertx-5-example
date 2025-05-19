@@ -29,11 +29,14 @@ Users should be very familiar with Java, HTML, CSS, Javascript, and PostgreSQL.
 ## Getting started: 
 
 1. After branching the project and mporting it to your IDE, ensure the setup in Maven is correct. The POM file is current as of May 2025. Rename the project in the POM file. Update the dependencies. The OWASP dependency checker will underline dependencies that are vulnerable.
-2. Create a directory on your desktop `/VertxServerSecrets/ServerSecrets.properties` .This is the directory and file that is expected to be present. Store the project passwords this .properties file.
    
-    -- Go to the ` example.web.access.SecretEncDec `. Uncomment the Main Method. This will encrypt the ` .properties file ` and store it in the project. The instructions to run the class are provided within the file. 
+3. Create a directory on your desktop `/VertxServerSecrets/ServerSecrets.properties` .This is the directory and file that is expected to be present. Store the project passwords this .properties file.
+   
+    -- Go to the ` example.web.access.SecretEncDec `. Uncomment the Main Method. This will encrypt the ` .properties file ` and store it in the project. The instructions to run the class are provided within the class.
 
-3. Create a database: You will need 3 tables for the blog. Blogs, BlogRow, and BlogResource. Blogs primarily stores the metadata and other organization information. BlogRows is the data within the paragraphs and formatting/structure information, and BLogRefs is information that would be used as a reference for the blog. BlogRefs is optional.
+4. The index page will need to have the images replaced. There is one image used as a placeholder so the page will run.     
+
+5. Create a database: You will need 3 tables for the blog. Blogs, BlogRow, and BlogResource. Blogs primarily stores the metadata and other organization information. BlogRows is the data within the paragraphs and formatting/structure information, and BLogRefs is information that would be used as a reference for the blog. BlogRefs is optional.
 
 Schema: 
 ```
@@ -260,6 +263,14 @@ We've removed the convienient use of the Database Verticle. We do not see it men
 
 The database logic can be found under the `database` package. The ` DataBaseHandler ` class contains most of the top level logic for the queries. The SqlQuery Enum Class is for convenience. We divide queries into separate classes between Select, Upsert, and common Operations. The actual queries are written as any SQL query using a tool that helps us write, test, and optimize it. We can copy the query directly into a properties file and modify it using ` $1,  $2 ` etc to get the data from the params. This is convenient. We then place the queries in a map held in the appropriate Query Class. 
 
+
+Going Further: 
+
+Vert.x is a toolset to build high performance servers. It offers many advantages that make it an excellent choice for startups. The highest priority being that it saves cloud costs by requiring less compute. To understand more about building Vert.x servers check out their site at ` https://vertx.io/. ` It is a mature platform and is well supported by a community. It has several big players using it including Hulu and Groupon. They provide many examples of how to implement their services. 
+
+Also, to understand Vert.x read the book. It was writtin in 2020ish so much of the implementation information is more informational. They also have an old "A Gentle Guide to Asynchronous Programming Using Vert.x" which provides some understanding as well. It's an old implemenation with great performance, but lacks the hooks needed for modern instrumentation, OAuth, etc...
+
+The index page
 
 
 
