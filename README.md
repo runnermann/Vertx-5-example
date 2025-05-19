@@ -40,64 +40,67 @@ Schema:
 CREATE SEQUENCE blogs_id_seq;
 create table blogs
 (
-blog_id            bigint  default nextval('blogs_id_seq'::regclass) not null primary key,
-article            boolean default true,
-title              varchar                                                not null,
-read_time          integer                                                not null,
-meta_descript      varchar                                                not null,
-card_intro         varchar                                                not null,
-author             varchar                                                not null,
-create_date        date    default CURRENT_DATE,
-change_date        date,
-change_descript    varchar,
-page_endpoint      varchar                                                not null,
-image_link         varchar                                                not null,
-image_card_link    varchar                                                not null,
-image_card_alt     varchar,
-image_twitter_link varchar                                                not null
+    blog_id            bigint  default nextval('blogs_id_seq'::regclass) not null primary key,
+    article            boolean default true,
+    title              varchar                                                not null,
+    read_time          integer                                                not null,
+    meta_descript      varchar                                                not null,
+    card_intro         varchar                                                not null,
+    author             varchar                                                not null,
+    create_date        date    default CURRENT_DATE,
+    change_date        date,
+    change_descript    varchar,
+    page_endpoint      varchar                                                not null,
+    image_link         varchar                                                not null,
+    image_card_link    varchar                                                not null,
+    image_card_alt     varchar,
+    image_twitter_link varchar                                                not null
 );
 
 create table Blog_row
 (
-blog_id            bigint  not null references blogs,
-intro              boolean default false,
-new_row            boolean default false,
-section_left       boolean default true,
-section_left_end   boolean default false,
-subtitle           boolean default false,
-num_list_start     boolean default false,
-num_start_no       integer default 1,
-num_list_end       boolean default false,
-num_list_item      boolean default false,
-para_num           integer not null,
-h2_h3              varchar default 'h2'::character varying,
-h2_subtitle        varchar,
-para               varchar,
-img                boolean default false,
-img_name           varchar,
-img_alt            varchar,
-img_sz             integer default 7,
-unorder_list_start boolean default false,
-unorder_list_end   boolean default false,
-unorder_list_item  boolean default false,
-primary key (blog_id, para_num)
+    blog_id            bigint  not null references blogs,
+    intro              boolean default false,
+    new_row            boolean default false,
+    section_left       boolean default true,
+    section_left_end   boolean default false,
+    subtitle           boolean default false,
+    num_list_start     boolean default false,
+    num_start_no       integer default 1,
+    num_list_end       boolean default false,
+    num_list_item      boolean default false,
+    para_num           integer not null,
+    h2_h3              varchar default 'h2'::character varying,
+    h2_subtitle        varchar,
+    para               varchar,
+    img                boolean default false,
+    img_name           varchar,
+    img_alt            varchar,
+    img_sz             integer default 7,
+    unorder_list_start boolean default false,
+    unorder_list_end   boolean default false,
+    unorder_list_item  boolean default false,
+    primary key (blog_id, para_num)
 );
 
 create table Blog_resource
 (
-blog_id   bigint references blogs,
-reference varchar
+    blog_id   bigint references blogs,
+    reference varchar
 );
 
 ```
 
-Explanation: This blog is more of an article format than a blog format. It is a complex formatting system that allows 2 side by side columns. Images, A title, an introduction and references. This is more for formal information written from primary source information such as what would be expected in the academic world. Most of the complexity is handled in the Blog_row table along with the paragraph, title, and image data. Blog table provides the metadata used in the pages which helps with SEO. It is also used in the Blogs listing page or all blogs. 
+Explanation: This blog is more of an article format than a blog format. It is a complex formatting system that allows 2 side by side columns. Images, A title, an introduction and references. This is more for formal information written from primary source information such as what would be expected in the academic world. Most of the complexity is handled in the ` blog_row `table along with the paragraph, title, and image data. Blog table provides the metadata used in the pages which helps with SEO. It is also used in the blogs listing page or ` all_blogs `. 
 
-Blog_rows has multiple configuration possibilities. Does it include a title, is it on the right side, the left side, is there an image, and is it the end of the section. Each paragraph has its own row. Uploading and debugging the format blogs is a manual process but the result is very pleasing. 
+` blog_rows ` provides multiple configuration possibilities for a paragraph. The columns include a title, the article page alignment it on the left side, is there an image, and is it the end of the section. Each paragraph is a tuple. It also includes a title and if the title is h2 or h3. Uploading and debugging the format is a manual process but the result is very pleasing. 
 
-Load some data into the tables for use in the project. Note that you will need to provide images and the location if you want the images to show up. Without the images, the pages may not work. I recommend for the first few blogs, keep the images in the webroot resources to make it easier for debugging.
+Next, is an example of a few paragraphs of data for use in the example project. Note that you will need to provide images and the location if you want the images to show up. Without the images, the pages may not work. If you desire to leave out the images then comment out the images in the templates. I recommend for the first few blogs, keep the images in the webroot resources to make it easier for debugging. Then move the images to your cloud of preference.
 
-Populate an article in blogs: Each article only has one row/tuple in blogs. It also provides the main image data for the blog page. 
+Shown below will populate an article format. It contains an introduction, one page with two columns, and a closing. There should be an image at the top, the main title, the intro paragraph. The page should have 4 paragraphs. 2 on the left and two on the right.
+
+    First we insert into the blogs table. This data will also populate the ` all_blogs ` page.
+
 ```aiignore
 INSERT INTO public.blogs (article, title, read_time, meta_descript, card_intro, author, page_endpoint, image_link, image_card_link, image_card_alt, image_twitter_link)
     VALUES (
@@ -115,7 +118,7 @@ INSERT INTO public.blogs (article, title, read_time, meta_descript, card_intro, 
 
 ```
 
-Next we populate the blog_rows table. We start with blog 1, paragraph 0. Its important to keep order correct using paragraph numbers. 
+    Next we populate the blog_rows table. We start with blog 1, paragraph 0. It's important to keep order correct using paragraph numbers. 
 
 ```aiignore
 
@@ -234,7 +237,7 @@ VALUES (
 
 ### Lists and images
 
-Blog row also provides for images, unordered lists, ordered lists. 
+` blog_row ` also provides for images, unordered lists, ordered lists. 
 
 ### Block Quotes
 
@@ -244,7 +247,8 @@ A paragraph may be a block quote simply by adding it in the text. `<blockquote>.
 The BlogListing table and methods ` PageHandler(...) ` populates a Freemarker Template. The template is located at `resources.webroot.templates.bloglisting.ftl`. FreeMarker makes it simple to provide a complex structure without repeating the html. 
 
 ## Notes on column names
-If you makes changes, the ` blogPageHandler(...) ` method will output the table data using the same names as the columns. The ` article_template.ftl ` and ` blog_template.ftl ` are expecting the variable names as they are provided in the table as Column Names. But it is not automatic, you must ensure your column names match the template or you will get an error. You can adopt new column names, and make changes to the queries without changes to the ` blogPageHandler(...) `. The ` blogsAllPageHandler(...) ` will require reconfiguration as well since it serializes the returned data from the table into json manually. 
+
+If you makes changes, the ` blogPageHandler(...) ` method will output the table data using the same names as the columns. The ` article_template.ftl ` and ` blog_template.ftl ` are expecting the variable names as they are provided in the table as Column Names. But it is not automatic, you must ensure your column names match the template or you will get an error. You can adopt new column names, and make changes to the queries without changes to the ` blogPageHandler(...) `. The ` blogsAllPageHandler(...) ` will require reconfiguration as well since it serializes the returned data from the table into json manually. Each method is commented to hopefully provide an explanation for the experianced developer/SWE.
 
 ## Notes on the structure
 
