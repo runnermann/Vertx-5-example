@@ -278,6 +278,15 @@ Vert.x is a toolset to build high performance servers. It offers many advantages
 Also, to understand Vert.x read the book. It was writtin in 2020ish so much of the implementation information is more informational. They also have an old "A Gentle Guide to Asynchronous Programming Using Vert.x" which provides some understanding as well. It's an old implemenation with great performance, but lacks the hooks needed for modern instrumentation, OAuth, etc...
 
 
+## Resources: 
+I recommend these sources:
+### OAuth2 and OpenID integration with Vert.x 5
+    - The examples repo
+    https://github.com/eclipse-vertx/vertx-auth/blob/master/vertx-auth-oauth2/src/main/java/examples/AuthOAuth2Examples.java
+    - Some information
+    https://vertx.io/docs/howtos/web-and-oauth2-oidc/
+
+
 
 
 
