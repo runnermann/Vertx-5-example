@@ -290,6 +290,9 @@ I recommend these sources:
 
     - Notes from migration
     https://docs.redhat.com/en/documentation/red_hat_build_of_eclipse_vert.x/4.3/html/eclipse_vert.x_4.3_migration_guide/authentication-and-authorization_vertx#deprecated-and-removed-authentication-and-authorization-methods_authentication-and-authorization
+
+    - Considerations for login security
+    https://www.reddit.com/r/devops/comments/1ak7pex/is_keycloak_worth_the_maintenance/
     
 
 
