@@ -275,16 +275,22 @@ Future versions should include:
 
 Vert.x is a toolset to build high performance servers. It offers many advantages that make it an excellent choice for startups. The highest priority being that it saves cloud costs by requiring less compute. To understand more about building Vert.x servers check out their site at ` https://vertx.io/. ` It is a mature platform and is well supported by a community. It has several big players using it including Hulu and Groupon. They provide many examples of how to implement their services. 
 
-Also, to understand Vert.x read the book. It was writtin in 2020ish so much of the implementation information is more informational. They also have an old "A Gentle Guide to Asynchronous Programming Using Vert.x" which provides some understanding as well. It's an old implemenation with great performance, but lacks the hooks needed for modern instrumentation, OAuth, etc...
+Also, to understand Vert.x read the book. It was writtin in 2020ish so much of the implementation information is more informational. They also have the "A Gentle Guide to Asynchronous Programming Using Vert.x" which provides some implementation in an integrated top level understanding. It was written for version 3. It's an old implemenation with great performance, but lacks the hooks needed for modern instrumentation, OAuth, etc...
 
 
 ## Resources: 
 I recommend these sources:
 ### OAuth2 and OpenID integration with Vert.x 5
-    - The examples repo
+
+    - The examples repo, Testing sometimes has good hints
     https://github.com/eclipse-vertx/vertx-auth/blob/master/vertx-auth-oauth2/src/main/java/examples/AuthOAuth2Examples.java
+    
     - Some information
     https://vertx.io/docs/howtos/web-and-oauth2-oidc/
+
+    - Notes from migration
+    https://docs.redhat.com/en/documentation/red_hat_build_of_eclipse_vert.x/4.3/html/eclipse_vert.x_4.3_migration_guide/authentication-and-authorization_vertx#deprecated-and-removed-authentication-and-authorization-methods_authentication-and-authorization
+    
 
 
 
