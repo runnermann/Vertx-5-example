@@ -279,7 +279,7 @@ Also, to understand Vert.x read the book. It was writtin in 2020ish so much of t
 
 
 ## Resources: 
-I recommend these sources:
+
 ### OAuth2 and OpenID integration with Vert.x 5
 
     - Integrating OpenID: You may need this if integrating LinkedIn d:/.
@@ -293,10 +293,10 @@ I recommend these sources:
     Also: 
     https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication?context=linkedin%2Fconsumer%2Fcontext
 
-    - The vertx examples repo, Testing sometimes has good hints
+    - The vertx examples repo, Testing
     https://github.com/eclipse-vertx/vertx-auth/blob/master/vertx-auth-oauth2/src/main/java/examples/AuthOAuth2Examples.java
     
-    - Some information
+    - Example
     https://vertx.io/docs/howtos/web-and-oauth2-oidc/
 
     - Notes from migration
