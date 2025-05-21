@@ -282,7 +282,18 @@ Also, to understand Vert.x read the book. It was writtin in 2020ish so much of t
 I recommend these sources:
 ### OAuth2 and OpenID integration with Vert.x 5
 
-    - The examples repo, Testing sometimes has good hints
+    - Integrating OpenID: You may need this if integrating LinkedIn d:/.
+    Be sure that scope is:  ` openid profile email ` DO NOT USE ` r_emailaddress,r_liteprofile,rw_ads,rw_organization_admin ` 
+    Linkedin Developer Portal: Set up your OAuth2 id, secret, and redirect_url
+    https://www.linkedin.com/developers/apps
+    Also:
+    https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2
+    Sample APP:
+    https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications
+    Also: 
+    https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication?context=linkedin%2Fconsumer%2Fcontext
+
+    - The vertx examples repo, Testing sometimes has good hints
     https://github.com/eclipse-vertx/vertx-auth/blob/master/vertx-auth-oauth2/src/main/java/examples/AuthOAuth2Examples.java
     
     - Some information
