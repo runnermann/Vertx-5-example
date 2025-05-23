@@ -11,7 +11,7 @@ The Freemarker Template gives the platform desirable capability and offloads muc
 
 ## OAuth2
 The example also uses OAuth2 for logging in with Linkedin. There will be further examples later. (Please note that at the 
-present time, this implementation is NOT completed.)
+present time, this implementation is working.)
 
 ## Passwords/Secrets Protection
 Env files are vulnerable particularly if a developer pushes them to Github. OAuth2, database, and AWS Mail etc need usernames and passwords. Keeping these in the project is problematic in that they are visible to anyone that has access to the repository. Many developers have been a victim of this problem. This project provides a means to store the secrets in protected files.  Other developers can then use the project without the actual passwords. -In reality, this is only an abstraction. Do NOT push these files if the project is public. The only protection this provides is preventing vulnerabilities of env files or config files. 
