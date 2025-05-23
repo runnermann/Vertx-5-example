@@ -6,11 +6,15 @@ import com.runnermann.wolf.example.utility.BusAddressMap;
 import io.vertx.core.Future;
 import io.vertx.core.VerticleBase;
 import io.vertx.core.file.FileSystemOptions;
+import io.vertx.core.http.HttpClientOptions;
+import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
+import io.vertx.ext.auth.User;
 import io.vertx.ext.auth.authentication.TokenCredentials;
 import io.vertx.ext.auth.oauth2.OAuth2Auth;
+import io.vertx.ext.auth.oauth2.OAuth2Options;
 import io.vertx.ext.auth.oauth2.providers.LinkedInAuth;
 import io.vertx.ext.web.client.WebClient;
 import io.vertx.ext.web.codec.BodyCodec;
@@ -25,6 +29,9 @@ import io.vertx.ext.web.templ.freemarker.FreeMarkerTemplateEngine;
 
 // LOGGER
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -77,48 +84,80 @@ public class HttpServerVerticle extends VerticleBase {
         final String CLIENT_ID = mo.getEpirtsErrors(7);
         final String CLIENT_SECRET = mo.getEpirtsErrors(8);
         // The Auth
-        final OAuth2Auth linkedinAuth = LinkedInAuth.create(vertx, CLIENT_ID, CLIENT_SECRET);
+        // The OpenID Auth
+
+        // Linkedin expects these differently than GitHub. Set these here
+        final JsonObject extraParams = new JsonObject()
+                .put("authentication_method", "client_secret_post")
+                .put("client_id", CLIENT_ID)
+                .put("client_secret", CLIENT_SECRET)
+                .put("redirect_uri", "http://localhost:80/callback")
+                .put("response_type", "code")
+                .put("grant_type", "authorization_code")
+                .put("scope","openid profile email");
+
+        // Vert.x Auth "scopes" will fail, unless there is an array of scopes
+        final List<String> scopes = new ArrayList<>();
+        scopes.add("openid");
+        scopes.add("email");
+        scopes.add("profile");
+
+        // Create HttpClientOptions
+        // Not sure if this is needed, just followed Vert.x
+        // guide.
+        final HttpClientOptions options = new HttpClientOptions()
+                .setDefaultPort(80)
+                .setKeepAlive(true)
+                .setConnectTimeout(5000)
+                .setIdleTimeout(10000)
+                .setSsl(false);
+
+        final OAuth2Auth linkedinAuth = OAuth2Auth.create(vertx, new OAuth2Options()
+                .setExtraParameters(extraParams) // we set the params here. Nightmare to figure this out!!!
+                .setHttpClientOptions(options)
+                .setClientId(CLIENT_ID)
+                .setSite("https://www.linkedin.com")
+                .setTokenPath("/oauth/v2/accessToken")
+                .setAuthorizationPath("/oauth/v2/authorization")
+                .setUserInfoPath("/people/~"));
+
+
         // We first build the request.
         /*
-         * Send the user to the Linkedin Auth Page. LinkedIn displays a sign in to the user.
-         * When the user signs in, they then accept or deny the permissions (withScope(xxxx) for access to their
-         * information. Expect, they may grant access to their email, but not their profile.
+         * Send the user to the Linkedin Page. LinkedIn displays a sign in to the user.
+         * When the user signs in, they then accept or deny the requests (withScope(xxxx) for access to their
+         * information.They may grant access to their email, but not their profile.
+         * Be sure to share this redirect_url with Linkedin: http://localhost:80/callback
+         * Original: https://www.linkedin.com/developers/tools/oauth/redirect
          */
         router.get("/protected")
-                .handler(
-                        OAuth2AuthHandler.create(vertx, linkedinAuth,  "http://localhost:80/callback")
-                                .setupCallback(router.route("/callback")) //BLDR1609
-                                .withScope("openid profile email")
-                                .pkceVerifierLength(64))
+                .handler(OAuth2AuthHandler.create(vertx, linkedinAuth, "http://localhost:80/callback")
+                        .setupCallback(router.route("/callback"))
+                        .withScopes(scopes))
+                // Confusing but the handler abstracts all of the steps needed to return the needed access_token.
+                // We can then use it next.
                 .handler(ctx -> {
-                    // Linkedin Fails here. Github succeeds to here.
-                    System.out.println("We are here, line 122 HttpServerVerticle");
-                    System.out.println("Now request token");
+                    // If you don't use these, remove them
+                    // very helpful with debugging
+                    final User user = ctx.user();
+                    final JsonObject tknMap = user.principal();
+
                     WebClient.create(ctx.vertx())
                             .getAbs("https://api.linkedin.com/v2/userinfo")
+                            //.addQueryParam("access_token", tknMap.getString("access_token"))
                             .authentication(new TokenCredentials(ctx.user().<String>get("access_token")))
-                            .as(BodyCodec.jsonArray())
+                            .as(BodyCodec.jsonObject())
                             .send()
                             .onFailure(err -> {
-                                System.out.println("Error attempting to get users email from Github API: " + err.getMessage());
+                                System.err.println("Error attempting to get profile from Linkedin API: " + err.getMessage());
                                 err.printStackTrace();
                                 ctx.session().destroy();
                                 ctx.fail(err);
                             })
                             .onSuccess(res -> {
-                                System.out.println("Succeeded");
-                                JsonObject json = new JsonObject();
-                                json.put("private_emails", res.body());
-                                // we pass the client info to the template
-                                ctx.put("userInfo", json);
-                                // and now delegate to the engine to render it.
-                                templateEngine.render(ctx.data(), "views/protected.ftl")
-                                        .onSuccess(buffer -> {
-                                            ctx.response()
-                                                    .putHeader("Content-Type", "text/html")
-                                                    .end(buffer);
-                                        })
-                                        .onFailure(ctx::fail);
+                                JsonObject jObj = res.bodyAsJsonObject();
+                                // This should succeed at retrieving the users profile information.
+                                LOGGER.error(Json.encodePrettily(jObj));
                             });
                 });
         // -------------------------------------------- --------------------------------------------//

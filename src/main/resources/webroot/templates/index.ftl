@@ -40,7 +40,6 @@ Said by a centurion poet about 49bc.
     <link href="/app/style/h_scroll_infinite.css" rel="stylesheet" type="text/css">
     <link href="/app/style/button_ripple.css" rel="stylesheet" type="text/css">
     <link href="/app/style/typewriter_form.css" rel="stylesheet" type="text/css">
-    <link href="/app/style/animate_scroll.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -56,8 +55,8 @@ Said by a centurion poet about 49bc.
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="top-margin-tagline ht-220">
-                        <h1 class="hero-blue">Reactive async performance. Full featured capabilities.
-                        Vert.x server example.</h1>
+                        <h1 class="hero-blue">Reactive async performance. Full-featured capabilities.
+                        Vert.x 5 server example.</h1>
                         <br>
                     </div>
                 </div>
@@ -86,7 +85,7 @@ Said by a centurion poet about 49bc.
                             data-bs-toggle="modal"
                             data-bs-target="#signin-modal"
                             data-for-type="individual">
-                        Start now &nbsp;
+                        OAuth2 &nbsp;
                         <svg width="0.825rem" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L9 1M9 1H2.5M9 1V7.22222" stroke="currentColor" stroke-width="1.76" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     </button>
                 </div>
@@ -95,32 +94,6 @@ Said by a centurion poet about 49bc.
     </section>
 </div>
 <#-- END UPPER HERO -->
-<!-- infinite h scroll carousel -->
-<section>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2>Who's using Vert.x</h2>
-        </div>
-    </div>
-    <div class="car">
-        <div class="my-16 flex max-w-full flex-col items-start gap-14 overflow-x-hidden">
-            <div class="car-track">
-                <div class="car-item">"KnocScore"</div>
-                <div class="car-item">"Ing"</div>
-                <div class="car-item">"ticketmaster"</div>
-                <div class="car-item">"hulu"</div>
-                <div class="car-item">"Groupon"</div>
-            </div>
-            <div class="my-16 flex max-w-full flex-col items-start gap-14 overflow-x-hidden">
-                <div class="car-item">"KnocScore"/div>
-                    <div class="car-item">"Ing"</div>
-                    <div class="car-item">"ticketmaster"</div>
-                    <div class="car-item">"hulu"</div>
-                    <div class="car-item">"Groupon"</div>
-            </div>
-        </div>
-    </div>
-</section>
 <#-- BRACKETS SECTION -->
 <section>
     <div class="section-box-braces top-margin-section">
@@ -129,7 +102,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">Makee yakee dokluc zoomyuk</h2>
+                        <h2 class="bud-heading-style bud-subheader">Lorem ipsum dolor sit amet.</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <div class="img-coin"></div>
@@ -168,7 +141,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">VertxExample: Looki duuksum yooki ugg</h2>
+                        <h2 class="bud-heading-style bud-subheader">Example: Lorem ipsum dolor sit amet.</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
@@ -191,7 +164,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">Cuum te VertxExample sokee</h2>
+                        <h2 class="bud-heading-style bud-subheader">Cuum te Example</h2>
                         <p class="bud-body">
                             Eos ipsum iure eum beatae sapiente ut neque praesentium ea expedita reiciendis sed voluptas
                             impedit cum velit aspernatur qui inventore magnam. Eos deleniti quia et dicta odit et delectus
@@ -204,13 +177,13 @@ Said by a centurion poet about 49bc.
                             aut omnis Quis aut galisum dolorem eos iusto officia.
                         </p>
                         <p class="bud-body">
-                            VertxExample 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
+                            Example 33 dolorem totam id necessitatibus consectetur ut consectetur quidem. Ut alias necessitatibus
                             non architecto internos eum quod molestiae aut dolor assumenda qui sequi nihil qui asperiores
                             accusamus et reiciendis impedit! Sed officia dolores ex iste voluptas est nisi magnam vel
                             repellat quidem.
                         </p>
                         <p class="bud-body">
-                            See <a class="link-light" href="https://VertxExample.com/articles/7/mylinkhere">
+                            See <a class="link-light" href="https://Example.com/articles/7/mylinkhere">
                                 Hakorem delos tod nescreatis olum dork prudascuulista guidem po. Ut alias nekeedsum</a>
                         </p>
                     </div>
@@ -244,14 +217,14 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of VertxExample">
+                                         alt="A simple example of Vertx">
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <img class="section-img bud-img"
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="A simple example of VertxExample">
+                                         alt="A simple example of Vertx">
                                 </div>
                             </div>
                             <#-- second row of images -->
@@ -269,7 +242,7 @@ Said by a centurion poet about 49bc.
                                          src="/app/images/grnscreenrunner.png"
                                          srcset="/app/images/grnscreenrunner.png"
                                          loading="eager"
-                                         alt="VertxExample">
+                                         alt="Example">
                                     <br>
                                 </div>
                             </div>
@@ -301,7 +274,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">VertxExample It</h2>
+                        <h2 class="bud-heading-style bud-subheader">Example Lorem ipsum dolor sit amet.</h2>
                         <br>
                         <div class="bud-img-section">
                             <img class="section-img bud-img"
@@ -404,7 +377,7 @@ Said by a centurion poet about 49bc.
             <div class="bud_wrapper">
                 <div class="row ">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="bud-heading-style bud-subheader">We vee dem Sakee luc nakee</h2>
+                        <h2 class="bud-heading-style bud-subheader">We vee dem luc</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <p class="bud-body">
@@ -416,7 +389,7 @@ Said by a centurion poet about 49bc.
                         <div class="text-center top-margin-btn">
                             <button type="button" class="btn-index" id="button_two" data-bs-toggle="modal"
                                     data-bs-target="#signin-modal" data-for-type="individual">
-                                Get started
+                                OAuth2
                                 <svg width="0.825rem" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L9 1M9 1H2.5M9 1V7.22222"
                                  stroke="currentColor" stroke-width="1.76" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                             </button>
@@ -436,7 +409,7 @@ Said by a centurion poet about 49bc.
             <div class="row">
                 <div class="col-md-3">&nbsp;</div>
                 <div class="col-md-6">
-<#--                    <h3 class="hero-white text-shdw scroll-section scroll-D">Finally and importantly, VertxExample with it.</h3>-->
+
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -458,7 +431,7 @@ Said by a centurion poet about 49bc.
             <#-- ROW -->
             <div class="row hide-mobile">
                 <div class="col-md-12 text-center mt-15">
-                    <h2 class="hero-blue-btm text-shdw">Vert.x Example</h2>
+                    <h2 class="hero-blue-btm text-shdw">Vert.x 5 Example</h2>
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
-Inline-style:
-![alt text](https://github.com/runnermann/ksVertex-web-five/blob/master/src/README_MEDIA/index_and_OAuth.mov "ksVertx Demo") 
+
 
 # Vert.x 5 Website Example using Freemarker Templates, PostgreSQL, and Bootstrap 
 
@@ -14,16 +13,16 @@ The Freemarker Template gives the platform desirable capability and offloads muc
 The example also uses OAuth2 for logging in with Linkedin. There will be further examples later. (Please note that at the 
 present time, this implementation is NOT completed.)
 
-## Password protection
+## Passwords/Secrets Protection
 Env files are vulnerable particularly if a developer pushes them to Github. OAuth2, database, and AWS Mail etc need usernames and passwords. Keeping these in the project is problematic in that they are visible to anyone that has access to the repository. Many developers have been a victim of this problem. This project provides a means to store the secrets in protected files.  Other developers can then use the project without the actual passwords. -In reality, this is only an abstraction. Do NOT push these files if the project is public. The only protection this provides is preventing vulnerabilities of env files or config files. 
 
     
-## Prerequisits:
+## Prerequisits
 Users should be familiar with Asynchronous Concepts. Vert.x provides a good understanding if you are already familiar with it. They also provide a good book on the subject. The source code in the book is from 2020 but it provides a comprehensive understanding of how Vert.x works. 
 
 Users should be very familiar with Java, HTML, CSS, Javascript, and PostgreSQL.
 
-## Getting started: 
+## Getting started 
 
 1. After branching the project and mporting it to your IDE, ensure the setup in Maven is correct. The POM file is current as of May 2025. Rename the project in the POM file. Update the dependencies. The OWASP dependency checker will underline dependencies that are vulnerable.
 2. Create a directory on your desktop `/VertxServerSecrets/ServerSecrets.properties` .This is the directory and file that is expected to be present. Store the project passwords this .properties file.
