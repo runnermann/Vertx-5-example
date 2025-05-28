@@ -80,13 +80,12 @@ public class HttpServerVerticle extends VerticleBase {
         //                                       OAuth2 SECURE                                      //
         // -------------------------------------------- --------------------------------------------//
         final SecretEncDec mo = SecretEncDec.getInstance();
-        // GITHUB
-        final String CLIENT_ID = mo.getEpirtsErrors(7);
-        final String CLIENT_SECRET = mo.getEpirtsErrors(8);
-        // The Auth
-        // The OpenID Auth
+        final String[] keys = mo.getGithubKeys();
+        final String CLIENT_ID = keys[0];
+        final String CLIENT_SECRET = keys[1];
 
-        // Linkedin expects these differently than GitHub. Set these here
+        // The OpenID Auth
+        // Linkedin expects these differently than GitHub.
         final JsonObject extraParams = new JsonObject()
                 .put("authentication_method", "client_secret_post")
                 .put("client_id", CLIENT_ID)

@@ -68,7 +68,7 @@ public class SecretEncDec {
 
     private void init() {
         try {
-            this.setModelError();
+            this.setModel();
         }
         catch (Exception e) {
             LOGGER.warn("CRITICAL ERROR!!!: SecretEncDec threw exception in AppAccessVerticle {} \n{}", e.getMessage(), e.getStackTrace());
@@ -77,23 +77,46 @@ public class SecretEncDec {
     }
 
     /**
-     * Returns the keys for the DB connection
-     * @return
+     * @return Returns the keys for the DB connection
      */
-    public String[] getDBConnectErrors() {
+    public String[] getDBConnect() {
         String[] sArr = new String[2];
         sArr[0] = dec.arr[2];
         sArr[1] = dec.arr[3];
         return sArr;
     }
 
+    /**
+     * @return Returns keys for Linkedin OAuth2/OpenID
+     */
+    public String[] getLinkedinKeys() {
+        String[] sArr = new String[2];
+        sArr[0] = dec.arr[7];
+        sArr[1] = dec.arr[8];
+        return sArr;
+    }
 
-    public String getEpirtsErrors(int idx) {
+    /**
+     * @return Returns keys for Github OAuth2/OpenID
+     */
+    public String[] getGithubKeys() {
+        String[] sArr = new String[2];
+        sArr[0] = dec.arr[5];
+        sArr[1] = dec.arr[6];
+        return sArr;
+    }
+
+    /**
+     * REturns the key at the given index
+     * @param idx The index of the key
+     * @return Unencrypted key
+     */
+    public String getKey(int idx) {
         return dec.arr[idx];
     }
 
 
-    private void setModelError() throws Exception {
+    private void setModel() throws Exception {
         Syekic icDec;
         InnerOps<Syekic> innoDec1 = new InnerOps<Syekic>();
         // Get the file
