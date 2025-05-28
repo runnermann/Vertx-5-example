@@ -9,7 +9,7 @@ The Freemarker Template gives the platform desirable capability and offloads muc
     - The include statements are impacted significantly, this may be a correction on our end. More to follow.
     - The templates provide population of the meta in the page heads. This is important.
 
-## OAuth2
+## OpenID OAuth2 for Linkedin
 The example also uses OAuth2 for logging in with Linkedin. There will be further examples later. (Please note that at the 
 present time, this implementation is working.)
 

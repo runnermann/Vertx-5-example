@@ -138,10 +138,11 @@ public class HttpServerVerticle extends VerticleBase {
                 // We can then use it next.
                 .handler(ctx -> {
                     // If you don't use these, remove them
-                    // very helpful with debugging
+                    // helpful for debugging
                     final User user = ctx.user();
                     final JsonObject tknMap = user.principal();
 
+                    // Only needed to conduct other operations aside from getting basic profile information.
                     WebClient.create(ctx.vertx())
                             .getAbs("https://api.linkedin.com/v2/userinfo")
                             //.addQueryParam("access_token", tknMap.getString("access_token"))
