@@ -1,6 +1,5 @@
 :root {
     --scale: 30vh;
-    --fmlogo-image: url('../images/LOGO/topscholars/white/logo_white_horizontal_66X502.png');
     --main-body-font: "sohne-var", "Helvetica Neue", Arial, sans-serif;
     --pay-htitle-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -17,16 +16,6 @@
 
 .fm-header__logo {
     background-position: center;
-}
-
-.fm-header__logo {
-    margin-top: 48px;
-    background-image: var(--fmlogo-image);
-    height: 48px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width:100%;
 }
 .fm-container__paper {
     max-width: 776px;
@@ -98,7 +87,6 @@ input.ng-pristine {
     padding-left: 36px;
     width: 100%;
     height: 36px;
-    background: #ffffff url("../images/LOGO/topscholars/orange/logo_horizontal_501x88.png") no-repeat;
     background-size: contain;
     /* Center the image */
     /* Do not repeat the image */
@@ -695,7 +683,6 @@ footer {
     #home-logo {
         margin-left: 36px;
         height: 36px;
-        background: #FFFFFF url("../images/LOGO/topscholars/orange/logo_horizontal_501x88.png") no-repeat;
         /* *** END *** */
         background-size: contain;
         /* Center the image */

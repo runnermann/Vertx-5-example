@@ -1,6 +1,7 @@
 package com.runnermann.wolf.example.web.http;
 
 
+import com.runnermann.wolf.example.ext.exception.MethodNotImplementedException;
 import com.runnermann.wolf.example.web.database.DatabaseHandler;
 import com.runnermann.wolf.example.web.database.SqlQuery;
 import com.runnermann.wolf.example.web.protect.Page;
@@ -11,7 +12,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.templ.freemarker.FreeMarkerTemplateEngine;
 import io.vertx.sqlclient.Row;
 import io.vertx.sqlclient.RowSet;
-import org.apache.http.MethodNotSupportedException;
+
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
@@ -32,8 +33,8 @@ public class PageHandler {
      */
     void aboutPageHandler(RoutingContext context, FreeMarkerTemplateEngine templateEngine) {
         try {
-            throw new MethodNotSupportedException("Method is not implemented yet");
-        } catch (MethodNotSupportedException e) {
+            throw new MethodNotImplementedException();
+        } catch (MethodNotImplementedException e) {
             throw new RuntimeException(e);
         }
     };
@@ -45,8 +46,8 @@ public class PageHandler {
      */
     void ourBackersHandler(RoutingContext context, FreeMarkerTemplateEngine templateEngine) {
         try {
-            throw new MethodNotSupportedException("Method is not implemented yet");
-        } catch (MethodNotSupportedException e) {
+            throw new MethodNotImplementedException();
+        } catch (MethodNotImplementedException e) {
             throw new RuntimeException(e);
         }
     }

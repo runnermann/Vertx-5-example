@@ -271,12 +271,6 @@ Future versions should include:
     2. Instrumentation and metrics so we understand site performance and server performance.
     3. Moving to an SPA.
 
-## Going Further: 
-
-Vert.x is a toolset to build high performance servers. It offers many advantages that make it an excellent choice for startups. The highest priority being that it saves cloud costs by requiring less compute. To understand more about building Vert.x servers check out their site at ` https://vertx.io/. ` It is a mature platform and is well supported by a community. It has several big players using it including Hulu and Groupon. They provide many examples of how to implement their services. 
-
-Also, to understand Vert.x read the book. It was writtin in 2020ish so much of the implementation information is more informational. They also have the "A Gentle Guide to Asynchronous Programming Using Vert.x" which provides some implementation in an integrated top level understanding. It was written for version 3. It's an old implemenation with great performance, but lacks the hooks needed for modern instrumentation, OAuth, etc...
-
 
 ## Resources: 
 

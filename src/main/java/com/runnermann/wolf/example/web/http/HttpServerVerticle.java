@@ -1,5 +1,6 @@
 package com.runnermann.wolf.example.web.http;
 
+import ch.qos.logback.classic.Level;
 import com.runnermann.wolf.example.web.access.SecretEncDec;
 import com.runnermann.wolf.example.web.protect.Page;
 import com.runnermann.wolf.example.utility.BusAddressMap;
@@ -39,29 +40,32 @@ import java.util.List;
  */
 public class HttpServerVerticle extends VerticleBase {
 
-    // BUS ADDRESSES
-    public static final String BUS_USERDB_QUEUE = "user.db";
     private static final int PORT = 80;
-    //private EventBus eBus;// = vertx.eventBus();
+
     private final static ch.qos.logback.classic.Logger LOGGER = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(HttpServerVerticle.class);
     private static FreeMarkerTemplateEngine templateEngine;
-
 
 
     /**
      * Main Verticle initialization. Other verticles will use configs from this if needed
      */
     private void init() {
-        BusAddressMap.putAddress("database", BUS_USERDB_QUEUE);
+        LOGGER.setLevel(Level.DEBUG);
+        // empty in this example
     }
 
 
 
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+     *                                      START METHOD
+     * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     @Override
     public Future<?> start() {
         this.init();
 
-        //eBus = vertx.eventBus();
+        final String AUTH_END_POINT = "www.USE_GOOGLE.com";
+
+
         templateEngine = FreeMarkerTemplateEngine.create(vertx);
         final Router router = Router.router(vertx);
 
@@ -80,7 +84,7 @@ public class HttpServerVerticle extends VerticleBase {
         //                                       OAuth2 SECURE                                      //
         // -------------------------------------------- --------------------------------------------//
         final SecretEncDec mo = SecretEncDec.getInstance();
-        final String[] keys = mo.getGithubKeys();
+        final String[] keys = mo.getLinkedinKeys();
         final String CLIENT_ID = keys[0];
         final String CLIENT_SECRET = keys[1];
 
@@ -109,13 +113,14 @@ public class HttpServerVerticle extends VerticleBase {
                 .setKeepAlive(true)
                 .setConnectTimeout(5000)
                 .setIdleTimeout(10000)
-                .setSsl(false);
+                .setSsl(true);
 
-        final OAuth2Auth linkedinAuth = OAuth2Auth.create(vertx, new OAuth2Options()
-                .setExtraParameters(extraParams) // we set the params here. Nightmare to figure this out!!!
+        final OAuth2Auth Oauth2 = OAuth2Auth.create(vertx, new OAuth2Options()
+                .setExtraParameters(extraParams) // we set the params here.
                 .setHttpClientOptions(options)
                 .setClientId(CLIENT_ID)
-                .setSite("https://www.linkedin.com")
+                .setClientSecret(CLIENT_SECRET) // Leave in as per Paulo .
+                .setSite(AUTH_END_POINT)
                 .setTokenPath("/oauth/v2/accessToken")
                 .setAuthorizationPath("/oauth/v2/authorization")
                 .setUserInfoPath("/people/~"));
@@ -128,38 +133,12 @@ public class HttpServerVerticle extends VerticleBase {
          * information.They may grant access to their email, but not their profile.
          * Be sure to share this redirect_url with Linkedin: http://localhost:80/callback
          * Original: https://www.linkedin.com/developers/tools/oauth/redirect
+         *
+         * Linkedin Website uses Google OAuth2.
          */
-        router.get("/protected")
-                .handler(OAuth2AuthHandler.create(vertx, linkedinAuth, "http://localhost:80/callback")
-                        .setupCallback(router.route("/callback"))
-                        .withScopes(scopes))
-                // Confusing but the handler abstracts all of the steps needed to return the needed access_token.
-                // We can then use it next.
-                .handler(ctx -> {
-                    // If you don't use these, remove them
-                    // helpful for debugging
-                    final User user = ctx.user();
-                    final JsonObject tknMap = user.principal();
-
-                    // Only needed to conduct other operations aside from getting basic profile information.
-                    WebClient.create(ctx.vertx())
-                            .getAbs("https://api.linkedin.com/v2/userinfo")
-                            //.addQueryParam("access_token", tknMap.getString("access_token"))
-                            .authentication(new TokenCredentials(ctx.user().<String>get("access_token")))
-                            .as(BodyCodec.jsonObject())
-                            .send()
-                            .onFailure(err -> {
-                                System.err.println("Error attempting to get profile from Linkedin API: " + err.getMessage());
-                                err.printStackTrace();
-                                ctx.session().destroy();
-                                ctx.fail(err);
-                            })
-                            .onSuccess(res -> {
-                                JsonObject jObj = res.bodyAsJsonObject();
-                                // This should succeed at retrieving the users profile information.
-                                LOGGER.error(Json.encodePrettily(jObj));
-                            });
-                });
+//        router.get("/protected/*")
+//                .handler(ctx -> util.failureHandler(ctx, 400);
+//                });
         // -------------------------------------------- --------------------------------------------//
         //                                      END OAuth2 SECURE                                   //
         // -------------------------------------------- --------------------------------------------//

@@ -269,8 +269,9 @@ public class SecretEncDec {
         }
 
         // print for observation during testing
-        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (s3 acc key)", CLASS_INSTANCE.getEpirtsErrors(0)));
-        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (s3 sec key)", CLASS_INSTANCE.getEpirtsErrors(1)));
+        String[] linkedinKeys = CLASS_INSTANCE.getLinkedinKeys();
+        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (linkedin acc key)", linkedinKeys[0]));
+        System.out.println(String.format(OUTPUT_FORMAT, "Decrypted (linkedin sec key)", linkedinKeys[1]));
 
         System.exit(0);
     }
